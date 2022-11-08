@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script
+      src="https://kit.fontawesome.com/33714fa395.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Shopping bag</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav-wrapper container">
+        <label for="hamburger-menu" class="hamburger-icon"
+          ><img src="images/menu-open.svg" alt=""
+        /></label>
+        <input
+          type="checkbox"
+          name="hamburger-menu"
+          id="hamburger-menu"
+          class="hamburger"
+        />
+        <a href="/"
+          ><img
+            src="images/RainyDays_cropped.png"
+            width="84px"
+            alt="Rainy Days logo"
+        /></a>
+        <nav>
+          <a href="/"
+            ><img
+              aria-label="navigation"
+              src="images/RainyDays_cropped.png"
+              width="84px"
+              class="nav__logo"
+          /></a>
+          <ul>
+            <li><a href="collection.html">Our Collection</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
+        <a href="shopping-bag.html" class="shopping-bag has-items"
+          ><img src="/images/shopping-bag.svg" alt="" />
+          <span class="shopping-bag__item-tag">3</span>
+        </a>
+      </div>
+    </header>
+    <main>
+      <section class="bag">
+        <div class="container">
+          <div class="shopping-bag-top">
+            <div class="shopping-bag-info">
+              <h1>Shopping bag</h1>
+              <p>
+                Review your items in the shopping bag and proceed to checkout
+              </p>
+            </div>
+            <div>
+              <a class="checkout-button" href="checkout.html"
+                >Checkout <i class="fa-solid fa-chevron-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="shopping-bag-list">
+            <div class="shopping-bag-list-item">
+              <div>
+                <a href="product.html">
+                  <img
+                    class="product-image-bag"
+                    src="images/products/RainyDays_Jacket2.png"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="shopping-bag-options">
+                <h2>Slim Fit Jacket</h2>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <div style="display: inline-flex">
+                  <div class="shopping-bag__jacket-option black">Black</div>
+                  <div class="shopping-bag__size-option">XS</div>
+                </div>
+                <p>Amount: 1</p>
+                <p>Total: NOK 1599.00</p>
+                <input
+                  class="delete-checkbox"
+                  type="checkbox"
+                  name="delete"
+                  id="delete_checkbox"
+                />
+                <label for="delete_checkbox">
+                  <i class="fa-regular fa-trash-can"></i> Remove
+                </label>
+                <div class="modal">
+                  <p>Remove this item?</p>
+                  <button>Yes</button>
+                  <button>Cancel</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="shopping-bag-list-item">
+              <div>
+                <a href="product.html">
+                  <img
+                    class="product-image-bag"
+                    src="images/products/RainyDays_Jacket3.png"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="shopping-bag-options">
+                <h2>Slim Fit Jacket</h2>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <div style="display: inline-flex">
+                  <div class="shopping-bag__jacket-option red">Red</div>
+                  <div class="shopping-bag__size-option">M</div>
+                </div>
+                <p>Amount: 1</p>
+                <p>Total: NOK 1599.00</p>
+                <input
+                  class="delete-checkbox"
+                  type="checkbox"
+                  name="delete"
+                  id="delete_checkbox"
+                />
+                <label for="delete_checkbox">
+                  <i class="fa-regular fa-trash-can"></i> Remove
+                </label>
+                <div class="modal">
+                  <p>Remove this item?</p>
+                  <button>Yes</button>
+                  <button>Cancel</button>
+                </div>
+              </div>
+            </div>
+            <div class="shopping-bag-list-item">
+              <div>
+                <a href="product.html">
+                  <img
+                    class="product-image-bag"
+                    src="images/products/RainyDays_Jacket5.png"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="shopping-bag-options">
+                <h2>Slim Fit Jacket</h2>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <div style="display: inline-flex">
+                  <div class="shopping-bag__jacket-option grey">Grey</div>
+                  <div class="shopping-bag__size-option">XS</div>
+                </div>
+                <p>Amount: 1</p>
+                <p>Total: NOK 1599.00</p>
+                <input
+                  class="delete-checkbox"
+                  type="checkbox"
+                  name="delete"
+                  id="delete_checkbox"
+                />
+                <label for="delete_checkbox">
+                  <i class="fa-regular fa-trash-can"></i> Remove
+                </label>
+                <div class="modal">
+                  <p>Remove this item?</p>
+                  <button>Yes</button>
+                  <button>Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="shopping-bag-bottom">
+            <div>
+              <p>Total NOK 12 699.00</p>
+            </div>
+            <div>
+              <a class="checkout-button" href="checkout.html"
+                >Checkout <i class="fa-solid fa-chevron-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container footer-content">
+        <div class="footer-header">
+          <h4>Site map</h4>
+        </div>
+        <div class="footer-links">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="collection.html">Out Jacket Collection</a></li>
+            <li><a href="about.html">About us</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="checkout.html">Shopping Bag & Checkout</a></li>
+          </ul>
+        </div>
+        <div class="footer-address">
+          <p>Copyright Rainy Days Inc. 1923-2022</p>
+          <p>Rainy Street 118</p>
+          <p>0088 Rainy Town</p>
+          <p>Made Up Country</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
