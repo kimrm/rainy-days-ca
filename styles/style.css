@@ -711,6 +711,22 @@ form {
     color: var(--white);    
 }
 
+/* checkout page */
+
+.section__checkout .form-field .form-input {
+    width: 100%;    
+}
+
+.zipaddress {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.form-field .zip .form-input {
+    width: 90px;
+}
+
 /* media queries */
 
 @media (min-width:800px) {
