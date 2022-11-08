@@ -165,10 +165,10 @@ nav a:hover {
 .hero h1 {    
     color: var(--white);
     text-shadow: rgba(0, 0, 0, 100%) 0 3px 6px;
+    font-size: 2.5rem;
 }
 
-.hero p {
-    text-transform: uppercase;
+.hero p {    
     font-size: 1.2rem;
     color: var(--white);
     max-width: 300px;
@@ -181,7 +181,7 @@ nav a:hover {
     width: 200px;
     text-decoration: none;
     text-align: center;
-    color: var(--dark-gray);
+    color: var(--black);
     background-color: var(--green);
     font-size: 1rem;
     font-weight: bold;
@@ -281,6 +281,7 @@ h3 {
     border-width: 0;
     border-radius: 25px;
     background-color: var(--green);
+    color: var(--black);
     padding: 6px 50px 6px 50px;        
     display: flex;
     align-items: center;
@@ -713,19 +714,7 @@ form {
 
 /* checkout page */
 
-.section__checkout .form-field .form-input {
-    width: 100%;    
-}
 
-.zipaddress {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.form-field .zip .form-input {
-    width: 90px;
-}
 
 /* media queries */
 
@@ -810,11 +799,18 @@ form {
 }
 
 @media (min-width: 600px) {
+    .hero h1 {    
+        color: var(--white);
+        text-shadow: rgba(0, 0, 0, 100%) 0 3px 6px;        
+        font-size: 4rem;
+    }
+
     .hero p {
         max-width: 550px;
         font-size: 1.5rem;
         line-height: 2rem;
-        height: auto;                
+        letter-spacing: .2rem;        
+        height: auto;                        
     }
 
     .container {
