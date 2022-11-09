@@ -13,4 +13,4 @@ https://www.figma.com/file/3c0eAlUutWaUNcB2Dt0Rzp/Rainy-Days?node-id=0%3A1
 
 Desktop and mobile is in separate pages in Figma.
 
-There is some smaller changes in design from the prototype.
+There are some smaller changes in design from the prototype.
