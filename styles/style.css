@@ -12,7 +12,7 @@
     --dark-gray: #565759;
     --blue-green: #0A3641;
     --dark-blue: #3F3D56;
-    --red: rgb(255, 0, 0);
+    --red: rgb(173, 0, 0);
     --lato: 'Lato', Verdana, Geneva, Tahoma, sans-serif;  
     --josefin: 'Josefin Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -140,7 +140,7 @@ nav a:hover {
     bottom: 0;
     right: 8px;
     border-radius: 100%;
-    background-color: red;
+    background-color: var(--red);
     color: var(--white);
     padding: 2px 6px 2px 6px;
     font-size: .8rem;    
@@ -326,8 +326,7 @@ h3 {
 
 .about p {
     font-size: 1rem;    
-    line-height: 1.5rem;
-    max-width: 60%;
+    line-height: 1.5rem;    
 }
 
 .about-button {
@@ -714,11 +713,57 @@ form {
 
 /* checkout page */
 
+.section__checkout .container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.section__checkout h1 {
+    font-size: 1.5rem;
+    color: var(--dark-gray);    
+}
+
+.section__checkout form {    
+    width: 100%;
+}
+
+.section__checkout .form-field {
+    width: 100%;
+}
+
+.section__checkout .form-input {
+    width: 100%;
+}
+
+.section__checkout h2 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.total-cost {
+    font-size: 1.5rem;
+    color: var(--dark-gray);
+    display: flex;    
+    justify-content: space-between;
+    max-width: 400px;
+}
+
+.zipcode {
+    display: grid;
+    grid-template-columns:  100px auto;
+    gap:1rem;
+}
 
 
 /* media queries */
 
 @media (min-width:800px) {
+
+    .section__checkout form {    
+        width: 600px;
+    }
+
     .nav-wrapper {
         display: flex;
         justify-content: space-between;
@@ -799,6 +844,11 @@ form {
 }
 
 @media (min-width: 600px) {
+
+    .about p {
+        max-width: 600px;
+    }
+
     .hero h1 {    
         color: var(--white);
         text-shadow: rgba(0, 0, 0, 100%) 0 3px 6px;        
