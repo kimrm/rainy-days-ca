@@ -36,12 +36,18 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;    
     height: 100%;
-    font-family: 'Lato', Verdana, Geneva, Tahoma, sans-serif;    
+    width: 100%;
+    font-family: var(--lato);   
 }
 
 body {
     display: grid;
     grid-template-rows: 1fr auto;
+}
+
+.container {
+    margin: 0 12px;
+    padding: 0 12px;
 }
 
 /* header section - all pages  */
@@ -55,13 +61,13 @@ header {
 }
 
 h1 {
-    font-family: 'Josefin Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: var(--josefin);
     text-transform: uppercase;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 
 .nav-wrapper {
-    padding: 24px 0 24px 0;
+    padding: 24px 0 24px 12px;
     display: flex;
     justify-content: space-between;
 }
@@ -149,23 +155,20 @@ nav a:hover {
 .hero {
     background: linear-gradient(0deg, rgba(0 0 0 / 50%), rgba(0 0 0 / 50%)), url(/images/iceland_1920_compress.jpg);
     background-position: center;
-    background-size: 165vh;
-    padding: 12px;    
-    height: 50vh;
-    display: flex; 
+    background-size: cover;    
+    display: flex;     
+    padding-bottom: 12px;
 }
 
 .hero .container {
     display: flex;
     flex-direction: column;
     gap:1rem;
-    margin: auto auto;
 }
 
 .hero h1 {    
     color: var(--white);
     text-shadow: rgba(0, 0, 0, 100%) 0 3px 6px;
-    font-size: 2.5rem;
 }
 
 .hero p {    
@@ -211,12 +214,9 @@ main {
 }
 
 main > section {
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
-.container {
-    margin: 0 12px;
-}
 
 h2 {
     font-size: 1.3rem;
@@ -240,9 +240,15 @@ h3 {
     font-size: 1rem;
 }
 
-.product-list p {
+.product-list h1 {
+    font-size: 2.5rem;
+    color: var(--dark-gray);
+}
+
+.product-list h1 ~ p {
     color:var(--dark-gray);
     font-size: 1rem;
+    margin: 3rem 0;
 }
 
 .product-list ul {
@@ -470,6 +476,10 @@ form {
 }
 
 /* contact page */
+.faq {
+    padding: 1rem 0;
+}
+
 .faq h2 {
     margin: 2rem 0;
 }
@@ -480,31 +490,35 @@ form {
 }
 
 .faq ul li h3 {
-    font-size: .9rem;
-    color: var(--light-gray);
+    font-size: .8rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    color: var(--dark-gray);
+    letter-spacing: .1rem;
 }
 
 .faq ul li {
-    color: var(--white);
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 .contact-hero {
-    background: linear-gradient(0deg, rgba(0 0 0 / 50%), rgba(0 0 0 / 50%)), url(/images/bike-ride.jpg);
-    background-position: center;
-    background-size: 100%;
-    height: 30vh;
-    padding: 12px;  
+    /* background: linear-gradient(0deg, rgba(0 0 0 / 50%), rgba(0 0 0 / 50%)), url(/images/bike-ride.jpg); */
+    background-color: var(--medium-green);
+    background-position: center; 
+    background-size: cover;
+    padding: 4rem 0;      
 }
 
 .contact-hero h1 {
     color: var(--white);
-    font-size: 10vw;
 }
 
-.faq {
-    background-color: var(--medium-green);
-    padding: 1rem 0;
+.contact-hero  p {
+    font-size: 1.2rem;
+    color: var(--white);
+    max-width: 500px;
+    font-weight: 400;
+    line-height: 1.5rem;
 }
 
 /* product page */
@@ -528,7 +542,7 @@ form {
 }
 
 .product h1 {
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 .product-image {
@@ -758,7 +772,7 @@ form {
 
 /* media queries */
 
-@media (min-width:800px) {
+@media screen and (min-width:800px) {
 
     .section__checkout form {    
         width: 600px;
@@ -782,10 +796,6 @@ form {
         font-size: 5rem;                     
     }
 
-    .collection h1 {
-        margin-top: 2rem;
-    }
-
     nav {
         display: block;
     }
@@ -799,14 +809,13 @@ form {
         margin-left: 24px;
     }
 
-    .contact-hero {
-        background-size: cover;
-        height: 70vh;
-        display: flex;
+    .container {        
+        max-width: 1060px;
+        margin: 0 auto;
     }
 
     .hero {        
-        min-height: 500px;
+        min-height: 550px;
         padding: 4rem 0;
         background-size: cover;               
     }
@@ -817,6 +826,8 @@ form {
         line-height: 3rem;
     }    
 
+    /* product page: show as 2 column grid on wider screen */
+
     .product .container {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -825,28 +836,33 @@ form {
         'image options';
         column-gap: 2rem;
     }    
+    
     .heading-container {
         grid-area: heading;
     }
+    
     .image-container {
         grid-area: image;
     }
+
     .options-container {
         grid-area: options;
-    }
-    .shopping-bag {            
-        margin-right: 0;
     }
 
     .product-list ul {
         justify-content: space-between;
     }
+    
 }
 
 @media (min-width: 600px) {
 
     .about p {
         max-width: 600px;
+    }
+
+    .hero {        
+        min-height: 550px;             
     }
 
     .hero h1 {    
@@ -859,13 +875,7 @@ form {
         max-width: 550px;
         font-size: 1.5rem;
         line-height: 2rem;
-        letter-spacing: .2rem;        
-        height: auto;                        
-    }
-
-    .container {
-        max-width: 1060px;
-        margin: 0 auto;
+        letter-spacing: .2rem;                  
     }
 
     .reviews {
@@ -890,11 +900,4 @@ form {
         flex-direction: row;
         flex-wrap: wrap;
     }
-}
-
-@media (max-width: 1060px) {
-    .container {
-        margin: 0 12px;
-    }
-
 }
