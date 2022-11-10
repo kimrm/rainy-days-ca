@@ -31,6 +31,7 @@
     box-sizing: border-box;
     margin: 0;
 }
+
 html, body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -48,7 +49,7 @@ body {
 .message-box-success {
     padding: 2rem;
     background-color: var(--light-light-gray);
-    margin: 2rem 0;
+    margin: 1rem 0;
     border-left-style: solid;
     border-left-width: 4px;
     border-left-color: #B9BF04;
@@ -219,7 +220,7 @@ main {
     padding-top: 90px;
     display: flex;
     flex-direction: column;
-    gap: 3rem;  
+    gap: 2rem;  
 }
 
 main > section {
@@ -485,6 +486,7 @@ form {
 }
 
 /* contact page */
+
 .faq {
     padding: 1rem 0;
 }
@@ -512,9 +514,7 @@ form {
 
 .contact-hero {
     /* background: linear-gradient(0deg, rgba(0 0 0 / 50%), rgba(0 0 0 / 50%)), url(/images/bike-ride.jpg); */
-    background-color: var(--medium-green);
-    background-position: center; 
-    background-size: cover;
+    background-color: var(--medium-green);  
     padding: 4rem 0;      
 }
 
