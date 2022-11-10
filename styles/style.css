@@ -45,6 +45,15 @@ body {
     grid-template-rows: 1fr auto;
 }
 
+.message-box-success {
+    padding: 2rem;
+    background-color: var(--light-light-gray);
+    margin: 2rem 0;
+    border-left-style: solid;
+    border-left-width: 4px;
+    border-left-color: #B9BF04;
+}
+
 .container {
     margin: 0 12px;
     padding: 0 12px;
