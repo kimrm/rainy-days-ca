@@ -597,6 +597,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    margin-top: 3rem;
 }
 
 .options-container h3 {
@@ -914,15 +915,13 @@ form {
         line-height: 3rem;
     }    
 
-    /* product page: show as 2 column grid on wider screen */
-
     .product .container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 
         'heading heading'
         'image options';
-        column-gap: 2rem;
+        column-gap: 2rem;        
     }    
     
     .heading-container {
