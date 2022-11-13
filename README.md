@@ -6,6 +6,7 @@ This is a repo for an HTML and CSS course assignment. It's a fictional rain jack
 
 - Some design changes has been done since the prototype was made.
 - The remove from basket button doesn't do anything yet because it will need javascript.
+- The shopping bag always show 3 items for demonstration purposes.
 
 ### Execute program
 
