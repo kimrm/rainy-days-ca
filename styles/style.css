@@ -807,6 +807,14 @@ form {
 
 /* checkout page */
 
+.checkout-success {
+    width: 100%;
+}
+
+.checkout-success h1 {
+    font-size: 2rem;
+}
+
 .section__checkout .container {
     display: flex;
     flex-direction: column;
