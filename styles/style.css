@@ -51,24 +51,44 @@ body {
     grid-template-rows: 1fr auto;
 }
 
+.buy-button,
+.checkout-button,
+.purchase-button,
+.call-to-action,
+.about-button {  
+    padding: 6px 0;
+    font-size: 1rem;              
+    border-style: solid;
+    border-color: var(--green);
+    border-width: .5px;
+    color: var(--black);   
+    transition: all 500ms;     
+}
+
+.posts {
+    width: 100%;
+}
+
+.post {
+    margin: 2rem 0;
+}
+
+.posts a {
+    display: block;
+    padding: 2rem 0;
+}
+
 .post h2 {
     margin-bottom: 1rem;
 }
 
-.post p {
+.post p {    
+    max-width: 700px;
     margin-top: 1rem;
 }
 
-.image-box {
-    width: 400px;
-}
-
-.image-box img {
-    width: 100%;
-}
-
-.image-box p {
-    text-align: center;
+.post img {
+    max-width: 350px;
 }
 
 .message-box {
@@ -219,23 +239,18 @@ nav a:hover {
 
 .call-to-action {
     width: 200px;
-    text-decoration: none;
-    text-align: center;
     color: var(--black);
-    background-color: var(--green);
-    font-size: 1rem;
+    background-color: var(--green);    
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: .3rem;    
-    border-radius: 1rem;
     padding: .7rem 2rem;
-    box-shadow: rgba(0, 0, 0, 100%) 0 3px 6px;
-    margin: 24px 0;
+    box-shadow: rgba(0, 0, 0, 100%) 0 3px 6px;    
 }
 
 .call-to-action:hover {
-    background-color: var(--light-green);
-    color: var(--black);
+    background-color: var(--blue-green);
+    color: var(--white);  
     box-shadow: rgba(0, 0, 0, 100%) 0 3px 12px;
 }
 
@@ -351,21 +366,18 @@ h3 {
     margin: 2rem 0;
 }
 
-.buy-button,
-.checkout-button,
-.purchase-button {  
-    padding: 6px 0;
-    font-size: 1rem;              
-    border-style: solid;
-    border-color: var(--green);
-    border-width: .5px;
-    color: var(--black);   
-    transition: all 500ms;         
+.purchase-button {
+    cursor: pointer;
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 12px 24px;
+    width: 300px;    
+    text-transform: uppercase; 
 }
 
-.purchase-button {
-    padding: 8px 24px;
-    font-weight: bold;
+.purchase-button:hover {
+    background-color: var(--green);
+    color:#000;
 }
     
 .buy-button::before {
@@ -378,13 +390,12 @@ h3 {
 
 .about {
     background-color: var(--blue-green);
-    background-position-x: center;
     color: var(--white);    
     padding: 2rem 0 2rem 0
 }
 
 .about h4 {
-    margin:12px 0;
+    margin:2rem 0;
     font-family: var(--josefin);
     font-size: 3rem;
     color: var(--white);
@@ -393,24 +404,20 @@ h3 {
 .about p {
     font-size: 1rem;    
     line-height: 1.5rem;    
+    margin: 2rem 0;
 }
 
-.about-button {
-    cursor: pointer;
+.about-button {   
     background-color: var(--dark-blue);
     color: var(--white);
-    display: block;
     padding: 12px 24px;
-    margin: 24px 0;
-    width: 300px;
-    border-radius: 15px;
-    text-decoration: none;
-    text-transform: uppercase;
-    text-align: center;
+    width: 300px;    
+    text-transform: uppercase;    
 }
 
 .about-button:hover {    
-    background-color: var(--dark-green);
+    background-color: var(--green);
+    color:#000;
 }
 
 .about__jacket-img {
@@ -951,7 +958,7 @@ form {
         background-color: var(--light-light-gray);
         padding: 12px;
         border-radius: 15px;
-    }
+    }    
 }
 
 @media screen and (min-width: 1080px) {
