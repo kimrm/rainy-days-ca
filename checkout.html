@@ -53,7 +53,7 @@
             <p>Total cost</p>
             <p>NOK 9594.00</p>
           </div>
-          <form action="" class="form">
+          <form action="checkout-success.html" method="get" class="form">
             <h2>Please enter your invoice info</h2>
             <div class="form-field">
               <label class="label" for="name" required>Your name</label>
@@ -114,11 +114,18 @@
                 required
               />
             </div>
-            <div class="form-field">
+            <div class="form-field__checkbox">
               <input type="checkbox" name="" id="newsletter" />
               <label for="newsletter"
                 >Would you like to recieve our newsletter?</label
               >
+            </div>
+            <div class="form-field__submit">
+              <input
+                class="button purchase-button"
+                type="submit"
+                value="Complete purchase"
+              />
             </div>
           </form>
         </div>
