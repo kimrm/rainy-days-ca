@@ -696,7 +696,7 @@ form {
 }
 
 .jacket-option.red {
-    background-color: red;
+    background-color: var(--red);
     color: var(--white);
 }
 
