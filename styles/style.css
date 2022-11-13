@@ -42,6 +42,10 @@ html, body {
     font-family: var(--lato);   
 }
 
+.logo {
+    width: 84px;
+}
+
 body {
     display: grid;
     grid-template-rows: 1fr auto;
