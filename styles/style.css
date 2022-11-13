@@ -587,7 +587,7 @@ form {
     font-size: 1.2rem;
     color: var(--white);
     max-width: 500px;
-    font-weight: 400;
+    font-weight: bold;
     line-height: 1.5rem;
 }
 
