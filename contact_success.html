@@ -4,8 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Checkout</title>
+    <meta
+      name="description"
+      content="Our collection of fabolous rain jackets"
+    />
     <link rel="stylesheet" href="styles/style.css" />
+    <title>Rainy Days - Collection</title>
   </head>
   <body>
     <header>
@@ -36,7 +40,7 @@
           <ul>
             <li><a href="collection.html">Our Collection</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
           </ul>
         </nav>
         <a href="shopping-bag.html" class="shopping-bag has-items"
@@ -46,15 +50,16 @@
       </div>
     </header>
     <main>
-      <section class="section__checkout">
+      <section>
         <div class="container">
-          <h1>order checkout</h1>
-          <div class="total-cost">
-            <p>Total cost</p>
-            <p>NOK 9594.00</p>
+          <div class="message-box message-box__success" id="message-box">
+            <p>
+              Thank you for your message. Please allow a couple of work days for
+              us to reply.
+            </p>
           </div>
-          <form action="" class="form">
-            <h2>Please enter your invoice info</h2>
+          <h2>Contact form</h2>
+          <form action="contact_success.html" method="get" class="form">
             <div class="form-field">
               <label class="label" for="name" required>Your name</label>
               <input
@@ -67,60 +72,71 @@
               />
             </div>
             <div class="form-field">
-              <label class="label" for="name" required>Street address</label>
+              <label for="email">Your e-mail</label>
               <input
                 class="form-input"
-                type="text"
-                name="name"
-                id="streetname"
-                placeholder="Streetname and Number"
-                required
-              />
-            </div>
-            <div class="zipcode">
-              <div class="form-field">
-                <label class="label" for="name" required>ZIP code</label>
-                <input
-                  class="form-input"
-                  type="text"
-                  name="name"
-                  id="Zip-code"
-                  placeholder="Zip-code"
-                  required
-                />
-              </div>
-              <div class="form-field">
-                <label class="label" for="name" required>City</label>
-                <input
-                  class="form-input"
-                  type="text"
-                  name="name"
-                  id="city"
-                  placeholder="City.."
-                  required
-                />
-              </div>
-            </div>
-            <div class="form-field">
-              <label class="label" for="name" required
-                >Your e-mail address</label
-              >
-              <input
-                class="form-input"
-                type="text"
-                name="name"
-                id="e-mail"
+                type="email"
+                name="email"
+                id="email"
                 placeholder="E-mail.."
                 required
               />
             </div>
             <div class="form-field">
-              <input type="checkbox" name="" id="newsletter" />
-              <label for="newsletter"
-                >Would you like to recieve our newsletter?</label
-              >
+              <label for="message">Your message</label>
+              <textarea
+                class="form-input form-textarea"
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+                placeholder="Message.."
+              ></textarea>
             </div>
+            <input class="form-submit" type="submit" value="Send message" />
           </form>
+        </div>
+      </section>
+      <section class="faq">
+        <div class="container">
+          <h2>Frequently asked questions</h2>
+          <ul>
+            <li>
+              <h3>When will my package arrive?</h3>
+              <p>
+                We will pack your order and send it the next work day after you
+                submit your order.
+              </p>
+            </li>
+            <li>
+              <h3>When will my package arrive?</h3>
+              <p>
+                We will pack your order and send it the next work day after you
+                submit your order.
+              </p>
+            </li>
+            <li>
+              <h3>When will my package arrive?</h3>
+              <p>
+                We will pack your order and send it the next work day after you
+                submit your order.
+              </p>
+            </li>
+            <li>
+              <h3>When will my package arrive?</h3>
+              <p>
+                We will pack your order and send it the next work day after you
+                submit your order.
+              </p>
+            </li>
+            <li>
+              <h3>When will my package arrive?</h3>
+              <p>
+                We will pack your order and send it the next work day after you
+                submit your order.
+              </p>
+            </li>
+          </ul>
         </div>
       </section>
     </main>

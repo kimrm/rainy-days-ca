@@ -12,7 +12,7 @@
     <header>
       <div class="nav-wrapper container">
         <label for="hamburger-menu" class="hamburger-icon"
-          ><img src="images/menu-open.svg" alt=""
+          ><img src="images/menu-open.svg" alt="Menu button"
         /></label>
         <input
           type="checkbox"
@@ -41,13 +41,13 @@
           </ul>
         </nav>
         <a href="shopping-bag.html" class="shopping-bag has-items"
-          ><img src="/images/shopping-bag.svg" alt="" />
+          ><img src="/images/shopping-bag.svg" alt="Shopping bag" />
           <span class="shopping-bag__item-tag">3</span>
         </a>
       </div>
     </header>
     <main>
-      <section class="hero">
+      <section class="hero hero-section">
         <div class="container">
           <h1>Pushing The Comfort Zone</h1>
           <p>
@@ -57,68 +57,80 @@
           <a href="collection.html" class="call-to-action">Shop now</a>
         </div>
       </section>
-      <section class="product-list">
-        <div class="container">
-          <h2>Recommended for you</h2>
-          <ul>
-            <li>
-              <a href="product.html">
-                <img
-                  src="/images/products/RainyDays_Jacket1.png"
-                  alt="Slim Fit Jacket"
-                />
-              </a>
-              <h3>Slim Fit Rain Jacket</h3>
-              <p>Lorem ipsum, dolor sit amet.</p>
-              <div class="price-tag">NOK 1599.00</div>
-              <form action="/product.html" method="get">
-                <button class="buy-button">BUY</button>
-              </form>
-            </li>
-            <li>
-              <a href="product.html">
-                <img
-                  src="/images/products/RainyDays_Jacket2.png"
-                  alt="Slim Fit Jacket"
-                />
-              </a>
-              <h3>Slim Fit Rain Jacket</h3>
-              <p>Lorem ipsum, dolor sit amet.</p>
-              <div class="price-tag">NOK 1599.00</div>
-              <form action="/product.html" method="get">
-                <button class="buy-button">BUY</button>
-              </form>
-            </li>
-            <li>
-              <a href="product.html">
-                <img
-                  src="/images/products/RainyDays_Jacket3.png"
-                  alt="Slim Fit Jacket"
-                />
-              </a>
-              <h3>Slim Fit Rain Jacket</h3>
-              <p>Lorem ipsum, dolor sit amet.</p>
-              <div class="price-tag">NOK 1599.00</div>
-              <form action="/product.html" method="get">
-                <button class="buy-button">BUY</button>
-              </form>
-            </li>
-            <li>
-              <a href="product.html">
-                <img
-                  src="/images/products/RainyDays_Jacket4.png"
-                  alt="Slim Fit Jacket"
-                />
-              </a>
-              <h3>Slim Fit Rain Jacket</h3>
-              <p>Lorem ipsum, dolor sit amet.</p>
-              <div class="price-tag">NOK 1599.00</div>
-              <form action="/product.html" method="get">
-                <button class="buy-button">BUY</button>
-              </form>
-            </li>
-          </ul>
-        </div>
+      <section class="product-list container">
+        <h2>Recommended for you</h2>
+        <ul>
+          <li>
+            <div class="product-list__image">
+              <a href="product.html"
+                ><img
+                  src="/images/products/jacket1_500px.png"
+                  alt="Slim Fit Training Jacket"
+              /></a>
+            </div>
+            <h3>Slim Fit Rain Jacket</h3>
+            <p>Lorem ipsum, dolor sit amet.</p>
+            <div class="price-tag">NOK 1599.00</div>
+            <a href="product.html" class="button buy-button"
+              ><img
+                src="images/shopping-bag.svg"
+                alt="Add to cart button"
+              />Buy</a
+            >
+          </li>
+          <li>
+            <div class="product-list__image">
+              <a href="product.html"
+                ><img
+                  src="/images/products/jacket2_500px.png"
+                  alt="Slim Fit Training Jacket"
+              /></a>
+            </div>
+            <h3>Slim Fit Rain Jacket</h3>
+            <p>Lorem ipsum, dolor sit amet.</p>
+            <div class="price-tag">NOK 1599.00</div>
+            <a href="product.html" class="button buy-button"
+              ><img
+                src="images/shopping-bag.svg"
+                alt="Add to cart button"
+              />Buy</a
+            >
+          </li>
+          <li>
+            <div class="product-list__image">
+              <a href="product.html"
+                ><img
+                  src="/images/products/jacket3_500px.png"
+                  alt="Slim Fit Training Jacket"
+              /></a>
+            </div>
+            <h3>Slim Fit Rain Jacket</h3>
+            <p>Lorem ipsum, dolor sit amet.</p>
+            <div class="price-tag">NOK 1599.00</div>
+            <a href="product.html" class="button buy-button"
+              ><img src="images/shopping-bag.svg" alt="Add to cart button" />
+              Buy</a
+            >
+          </li>
+          <li>
+            <div class="product-list__image">
+              <a href="product.html"
+                ><img
+                  src="/images/products/jacket4_500px.png"
+                  alt="Slim Fit Training Jacket"
+              /></a>
+            </div>
+            <h3>Slim Fit Rain Jacket</h3>
+            <p>Lorem ipsum, dolor sit amet.</p>
+            <div class="price-tag">NOK 1599.00</div>
+            <a href="product.html" class="button buy-button"
+              ><img
+                src="images/shopping-bag.svg"
+                alt="Add to cart button"
+              />Buy</a
+            >
+          </li>
+        </ul>
       </section>
       <section>
         <div class="container"><h2>Established in 1923</h2></div>
@@ -141,116 +153,131 @@
         <h2>Great deals right now</h2>
         <ul>
           <li>
-            <a href="product.html">
-              <img
-                src="/images/products/RainyDays_Jacket5.png"
-                alt="Slim Fit Jacket"
-              />
-            </a>
+            <div class="product-list__image">
+              <a href="product.html"
+                ><img
+                  src="/images/products/jacket5_500px.png"
+                  alt="Slim Fit Training Jacket 1"
+              /></a>
+            </div>
             <h3>Slim Fit Rain Jacket</h3>
             <p>Lorem ipsum, dolor sit amet.</p>
             <div class="price-tag">NOK 1599.00</div>
-            <form action="/product.html" method="get">
-              <button class="buy-button">BUY</button>
-            </form>
+            <a href="product.html" class="button buy-button"
+              ><img
+                src="images/shopping-bag.svg"
+                alt="Add to cart button"
+              />Buy</a
+            >
           </li>
           <li>
-            <a href="product.html">
-              <img
-                src="/images/products/RainyDays_Jacket6.png"
-                alt="Slim Fit Jacket"
-              />
-            </a>
+            <div class="product-list__image">
+              <a href="product.html"
+                ><img
+                  src="/images/products/jacket6_500px.png"
+                  alt="Slim Fit Training Jacket 2"
+              /></a>
+            </div>
             <h3>Slim Fit Rain Jacket</h3>
             <p>Lorem ipsum, dolor sit amet.</p>
             <div class="price-tag">NOK 1599.00</div>
-            <form action="/product.html" method="get">
-              <button class="buy-button">BUY</button>
-            </form>
+            <a href="product.html" class="button buy-button"
+              ><img
+                src="images/shopping-bag.svg"
+                alt="Add to cart button"
+              />Buy</a
+            >
           </li>
           <li>
-            <a href="product.html">
-              <img
-                src="/images/products/RainyDays_Jacket7.png"
-                alt="Slim Fit Jacket"
-              />
-            </a>
+            <div class="product-list__image">
+              <a href="product.html"
+                ><img
+                  src="/images/products/jacket7_500px.png"
+                  alt="Slim Fit Training Jacket 3"
+              /></a>
+            </div>
             <h3>Slim Fit Rain Jacket</h3>
             <p>Lorem ipsum, dolor sit amet.</p>
             <div class="price-tag">NOK 1599.00</div>
-            <form action="/product.html" method="get">
-              <button class="buy-button">BUY</button>
-            </form>
+            <a href="product.html" class="button buy-button"
+              ><img
+                src="images/shopping-bag.svg"
+                alt="Add to cart button"
+              />Buy</a
+            >
           </li>
           <li>
-            <a href="product.html">
-              <img
-                src="/images/products/RainyDays_Jacket1.png"
-                alt="Slim Fit Jacket"
-              />
-            </a>
+            <div class="product-list__image">
+              <a href="product.html"
+                ><img
+                  src="/images/products/jacket1_500px.png"
+                  alt="Slim Fit Training Jacket 4"
+              /></a>
+            </div>
             <h3>Slim Fit Rain Jacket</h3>
             <p>Lorem ipsum, dolor sit amet.</p>
             <div class="price-tag">NOK 1599.00</div>
-            <form action="/product.html" method="get">
-              <button class="buy-button">BUY</button>
-            </form>
+            <a href="product.html" class="button buy-button"
+              ><img
+                src="images/shopping-bag.svg"
+                alt="Add to cart button"
+              />Buy</a
+            >
           </li>
         </ul>
       </section>
       <section>
-        <div class="container">
-          <div class="reviews">
-            <h4>What our customers say</h4>
+        <div class="container ratings">
+          <h4>What our customers say</h4>
+          <div class="ratings-list">
             <div class="card">
-              <img src="images/person1.jpg" alt="" />
-              <div class="review-name">Person 1</div>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi,
-                reiciendis debitis autem dolores non quas sapiente ipsa
-                voluptatum doloremque quasi consequatur accusantium voluptate
-                sint dolor? Labore et minus veritatis rem!
-              </p>
               <div>
-                <img src="images/Star.svg" alt="" />
-                <img src="images/Star.svg" alt="" />
-                <img src="images/Star.svg" alt="" />
-                <img src="images/Star.svg" alt="" />
-                <img src="images/Star.svg" alt="" />
+                <img src="images/person1.jpg" alt="Rating person 1" />
+                <p class="review-name">Person 1</p>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Modi, reiciendis debitis autem dolores non quas sapiente ipsa
+                  voluptatum doloremque quasi consequatur accusantium voluptate
+                  sint dolor? Labore et minus veritatis rem!
+                </p>
+              </div>
+              <div>
+                <img src="images/Star.svg" alt="Person 1 Star rating 1" />
+                <img src="images/Star.svg" alt="Person 1 Star rating 2" />
+                <img src="images/Star.svg" alt="Person 1 Star rating 3" />
+                <img src="images/Star.svg" alt="Person 1 Star rating 4" />
+                <img src="images/Star.svg" alt="Person 1 Star rating 5" />
               </div>
             </div>
             <div class="card">
-              <img src="images/person2.jpg" alt="" />
-              <div class="review-name">Person 2</div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptates est ex quam ipsum, molestiae blanditiis mollitia odit
-                explicabo deserunt veniam, sunt velit facere voluptas vitae
-                incidunt fugit adipisci, sed debitis.
-              </p>
               <div>
-                <img src="images/Star.svg" alt="" />
-                <img src="images/Star.svg" alt="" />
-                <img src="images/Star.svg" alt="" />
-                <img src="images/Star.svg" alt="" />
-                <img src="images/Star.svg" alt="" />
+                <img src="images/person2.jpg" alt="Rating person 2" />
+                <p class="review-name">Person 1</p>
+                <p>Lorem ipsum, dolor sit amet consectetur.</p>
+              </div>
+              <div>
+                <img src="images/Star.svg" alt="Person 2 Star rating 1" />
+                <img src="images/Star.svg" alt="Person 2 Star rating 2" />
+                <img src="images/Star.svg" alt="Person 2 Star rating 3" />
+                <img src="images/Star.svg" alt="Person 2 Star rating 4" />
+                <img src="images/Star.svg" alt="Person 2 Star rating 5" />
               </div>
             </div>
             <div class="card">
-              <img src="images/person3.jpg" alt="" />
-              <div class="review-name">Person 3</div>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa
-                ut hic rerum harum error cumque aliquid sequi expedita, iure,
-                mollitia nulla magnam quos distinctio? Beatae aliquam
-                perferendis nisi ab culpa.
-              </p>
               <div>
-                <img src="images/Star.svg" alt="" />
-                <img src="images/Star.svg" alt="" />
-                <img src="images/Star.svg" alt="" />
-                <img src="images/Star.svg" alt="" />
-                <img src="images/Star.svg" alt="" />
+                <img src="images/person3.jpg" alt=" Rating person 3" />
+                <p class="review-name">Person 1</p>
+                <p>
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                  Modi, reiciendis debitis autem dolores.
+                </p>
+              </div>
+              <div>
+                <img src="images/Star.svg" alt="Person 3 Star rating 1" />
+                <img src="images/Star.svg" alt="Person 3 Star rating 2" />
+                <img src="images/Star.svg" alt="Person 3 Star rating 3" />
+                <img src="images/Star.svg" alt="Person 3 Star rating 4" />
+                <img src="images/Star.svg" alt="Person 3 Star rating 5" />
               </div>
             </div>
           </div>
