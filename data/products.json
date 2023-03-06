@@ -1,0 +1,107 @@
+{
+  "products": [
+    {
+      "item_number": "1001",
+      "title": "StormShield",
+      "short_description": "This rain jacket is designed to protect you from the toughest storms.",
+      "description": "This rain jacket is designed to protect you from the toughest storms. With its durable fabric and waterproof technology, you can stay dry and comfortable even in the heaviest rainfall.",
+      "price": 2990,
+      "image": "/images/products/jacket1_500px.png",
+      "category": "men",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "deal": {
+        "discount_percent": 10
+      }
+    },
+    {
+      "item_number": "1002",
+      "title": "RainDefender",
+      "short_description": "Stay dry and stylish with the RainDefender rain jacket.",
+      "description": "Stay dry and stylish with the RainDefender rain jacket. Its sleek design is perfect for any occasion, and its water-resistant fabric will keep you dry on even the rainiest days.",
+      "price": 1990,
+      "image": "/images/products/jacket2_500px.png",
+      "category": "men",
+      "sizes": ["S", "M", "L", "XL", "XXL"]
+    },
+    {
+      "item_number": "1003",
+      "title": "AquaArmor",
+      "short_description": "Don't let the rain stop you from enjoying the outdoors.",
+      "description": "Don't let the rain stop you from enjoying the outdoors. With AquaArmor, you can stay protected from the elements while still staying comfortable and mobile.",
+      "price": 990,
+      "image": "/images/products/jacket3_500px.png",
+      "category": "women",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "deal": {
+        "discount_percent": 5
+      }
+    },
+    {
+      "item_number": "1004",
+      "title": "ThunderShell",
+      "short_description": "Whether you're facing a thunderstorm or just a light drizzle, the ThunderShell rain jacket has got you covered.",
+      "description": "Whether you're facing a thunderstorm or just a light drizzle, the ThunderShell rain jacket has got you covered. Its lightweight design makes it easy to wear, and its water-resistant fabric keeps you dry.",
+      "price": 1590,
+      "image": "/images/products/jacket4_500px.png",
+      "category": "men",
+      "sizes": ["S", "M", "L", "XL", "XXL"]
+    },
+    {
+      "item_number": "1005",
+      "title": "SkySentry",
+      "short_description": "Keep your head in the clouds and your feet on the ground with SkySentry.",
+      "description": "Keep your head in the clouds and your feet on the ground with SkySentry. This rain jacket is perfect for those who love to explore and take on new challenges, no matter the weather.",
+      "price": 990,
+      "image": "/images/products/jacket5_500px.png",
+      "category": "women",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "deal": {
+        "discount_percent": 12
+      }
+    },
+    {
+      "item_number": "1006",
+      "title": "HailHunter",
+      "short_description": "Don't let hail or sleet ruin your day.",
+      "description": "Don't let hail or sleet ruin your day. With HailHunter, you'll stay warm and dry, no matter what Mother Nature throws your way.",
+      "price": 2590,
+      "image": "/images/products/jacket6_500px.png",
+      "category": "women",
+      "sizes": ["S", "M", "L", "XL", "XXL"]
+    },
+    {
+      "item_number": "1007",
+      "title": "LightningGuard",
+      "short_description": "You don't have to fear the storm when you're wearing LightningGuard.",
+      "description": "You don't have to fear the storm when you're wearing LightningGuard. This rain jacket protects you from the elements and helps you feel confident and empowered, no matter what the weather's like outside.",
+      "price": 590,
+      "image": "/images/products/jacket7_500px.png",
+      "category": "women",
+      "sizes": ["S", "M", "L", "XL", "XXL"]
+    },
+    {
+      "item_number": "1008",
+      "title": "MistMaster",
+      "short_description": "When the mist rolls in, you can stay dry and comfortable with MistMaster.",
+      "description": "When the mist rolls in, you can stay dry and comfortable with MistMaster. Its breathable fabric ensures that you stay comfortable even in humid weather, while its water-resistant properties keep you dry.",
+      "price": 2090,
+      "image": "/images/products/jacket8_500px.png",
+      "category": "men",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "deal": {
+        "discount_percent": 10
+      }
+    },
+    {
+      "item_number": "1009",
+      "title": "DrenchDefense",
+      "short_description": "Get ready to tackle even the heaviest downpours with DrenchDefense.",
+      "description": "Get ready to tackle even the heaviest downpours with DrenchDefense. Its advanced waterproofing technology keeps you dry no matter how hard it rains, while its stylish design ensures that you look great while doing it.",
+      "price": 790,
+      "image": "/images/products/jacket9_500px.png",
+      "category": "men",
+      "sizes": ["S", "M", "L", "XL", "XXL"]
+    }
+  ],
+  "categories": ["men", "women"]
+}

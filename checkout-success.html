@@ -28,6 +28,7 @@
         a.appendChild(r);
       })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
     </script>
+    <script src="./js/index.js" type="module" defer></script>
   </head>
   <body>
     <header>
@@ -68,65 +69,32 @@
     </header>
     <main>
       <section class="container checkout-success">
-        <h1>Thank you for your order</h1>
+        <h1>Thank you for your purchase</h1>
         <p>Your purchase is completed. We will send your packet immediately.</p>
+        <p>
+          Thank you for choosing Rainy Days as your go-to destination for rain
+          jackets. We are thrilled to have you as our customer and we hope you
+          love your purchase as much as we do.
+        </p>
+        <p>
+          We take great pride in offering high-quality rain jackets that are not
+          only functional but also stylish. Our team works hard to ensure that
+          each item we sell meets our strict standards for durability, design,
+          and performance.
+        </p>
+        <p>
+          Your satisfaction is our top priority, so if there's anything we can
+          do to make your shopping experience even better, please don't hesitate
+          to reach out to us. We are always here to help!
+        </p>
+        <p>
+          Thank you again for choosing Rainy Days. We look forward to serving
+          you again in the future.
+        </p>
       </section>
       <section class="product-list container">
         <h2>Check out these other products</h2>
-        <ul>
-          <li>
-            <div class="product-list__image">
-              <a href="product.html"
-                ><img
-                  src="/images/products/jacket5_500px.png"
-                  alt="Slim Fit Training Jacket"
-              /></a>
-            </div>
-            <h3>Slim Fit Rain Jacket</h3>
-            <p>Lorem ipsum, dolor sit amet.</p>
-            <div class="price-tag">NOK 1599.00</div>
-            <a href="product.html" class="button buy-button">Buy</a>
-          </li>
-          <li>
-            <div class="product-list__image">
-              <a href="product.html"
-                ><img
-                  src="/images/products/jacket6_500px.png"
-                  alt="Slim Fit Training Jacket"
-              /></a>
-            </div>
-            <h3>Slim Fit Rain Jacket</h3>
-            <p>Lorem ipsum, dolor sit amet.</p>
-            <div class="price-tag">NOK 1599.00</div>
-            <a href="product.html" class="button buy-button">Buy</a>
-          </li>
-          <li>
-            <div class="product-list__image">
-              <a href="product.html"
-                ><img
-                  src="/images/products/jacket7_500px.png"
-                  alt="Slim Fit Training Jacket"
-              /></a>
-            </div>
-            <h3>Slim Fit Rain Jacket</h3>
-            <p>Lorem ipsum, dolor sit amet.</p>
-            <div class="price-tag">NOK 1599.00</div>
-            <a href="product.html" class="button buy-button">Buy</a>
-          </li>
-          <li>
-            <div class="product-list__image">
-              <a href="product.html"
-                ><img
-                  src="/images/products/jacket1_500px.png"
-                  alt="Slim Fit Training Jacket"
-              /></a>
-            </div>
-            <h3>Slim Fit Rain Jacket</h3>
-            <p>Lorem ipsum, dolor sit amet.</p>
-            <div class="price-tag">NOK 1599.00</div>
-            <a href="product.html" class="button buy-button">Buy</a>
-          </li>
-        </ul>
+        <ul id="checkoutProducts"></ul>
       </section>
     </main>
     <footer>

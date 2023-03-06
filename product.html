@@ -31,6 +31,7 @@
       src="https://kit.fontawesome.com/33714fa395.js"
       crossorigin="anonymous"
     ></script>
+    <script src="./js/index.js" type="module"></script>
     <title>Rainy Days - Slim Fit Training Jacket</title>
   </head>
   <body>
@@ -66,7 +67,7 @@
         </nav>
         <a href="shopping-bag.html" class="shopping-bag has-items"
           ><img src="/images/shopping-bag.svg" alt="Shopping bag" />
-          <span class="shopping-bag__item-tag">3</span>
+          <div class="shopping-bag__item-tag">0</div>
         </a>
       </div>
     </header>
@@ -80,150 +81,112 @@
       </section>
       <section class="product">
         <div class="container">
-          <div class="heading-container">
-            <h1>slim fit rain jacket</h1>
-            <h2>100% high tech waterproof fabric.</h2>
-          </div>
           <div class="image-container">
-            <img
-              class="product-image"
-              src="images/products/jacket2_500px.png"
-              alt="jacket"
-            />
+            <img class="product-image" id="product-image" src="" alt="jacket" />
           </div>
           <div class="options-container">
-            <h2>Alternatives</h2>
-            <div class="options-field">
-              <div class="color-options">
-                <h3>Color options</h3>
-                <input
-                  class="jacket-color"
-                  type="radio"
-                  name="alternatives"
-                  id="jacket-color-option1"
-                  checked
-                />
-                <label for="jacket-color-option1" class="jacket-option black"
-                  >Black</label
-                >
-                <input
-                  class="jacket-color"
-                  type="radio"
-                  name="alternatives"
-                  id="jacket-color-option2"
-                />
-                <label for="jacket-color-option2" class="jacket-option red"
-                  >Red</label
-                >
+            <div class="product-title-container">
+              <h1 id="productTitle">xxx xx xxx xx</h1>
+              <p class="product-short-description" id="productShortDescription">
+                xxxx xxx xxxx xx xxx
+              </p>
+              <div class="rating">
+                <div>
+                  <img src="images/Star.svg" alt="" />
+                  <img src="images/Star.svg" alt="" />
+                  <img src="images/Star.svg" alt="" />
+                  <img src="images/Star.svg" alt="" />
+                  <img src="images/Star.svg" alt="" />
+                </div>
+                <p>rated by customers who purchased this product</p>
+              </div>
+              <p class="price-tag discounted">
+                <span class="currency">Kr.</span><span id="price">000.00</span>
+                <span class="old-price">2990.00</span>
+              </p>
+            </div>
+
+            <div class="options-select-container">
+              <div class="options-field">
+                <div class="size-options">
+                  <span class="option-label">
+                    Size:
+                    <span class="option-label-value" id="selectedSize"
+                      >Please select your size</span
+                    >
+                  </span>
+                  <div class="size-options-group">
+                    <div class="size-option">
+                      <input
+                        class="radio"
+                        type="radio"
+                        name="size"
+                        id="sizeS"
+                        value="s"
+                      />
+                      <label for="sizeS">S</label>
+                    </div>
+                    <div class="size-option">
+                      <input
+                        class="radio"
+                        type="radio"
+                        name="size"
+                        id="sizeM"
+                        value="m"
+                      />
+                      <label for="sizeM">M</label>
+                    </div>
+                    <div class="size-option">
+                      <input
+                        class="radio"
+                        type="radio"
+                        name="size"
+                        id="sizeL"
+                        value="l"
+                      />
+                      <label for="sizeL">L</label>
+                    </div>
+                    <div class="size-option">
+                      <input
+                        class="radio"
+                        type="radio"
+                        name="size"
+                        id="sizeXL"
+                        value="xl"
+                      />
+                      <label for="sizeXL">XL</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="options-field">
+                <span class="option-label">Quantity</span>
+                <div class="quantity-input-container">
+                  <button class="quantity-button" id="itemAmountSubtract">
+                    -
+                  </button>
+                  <input
+                    class="quantity-input"
+                    type="text"
+                    name="item_amount"
+                    id="itemAmount"
+                    value="1"
+                  />
+                  <button class="quantity-button" id="itemAmountAdd">+</button>
+                </div>
               </div>
             </div>
-            <div class="options-field">
-              <div class="size-options">
-                <h3>Size options</h3>
-                <input class="radio" type="radio" name="size" id="size1" />
-                <label for="size1">XS</label>
-
-                <input class="radio" type="radio" name="size" id="size2" />
-                <label for="size2">S</label>
-
-                <input
-                  class="radio"
-                  type="radio"
-                  name="size"
-                  id="size3"
-                  checked
-                />
-                <label for="size3">M</label>
-
-                <input class="radio" type="radio" name="size" id="size4" />
-                <label for="size4">L</label>
-
-                <input class="radio" type="radio" name="size" id="size5" />
-                <label for="size5">XL</label>
-              </div>
-            </div>
-
-            <p class="price-tag">NOK 1590.00</p>
-
-            <div class="add-to-basket-container">
-              <a href="shopping-bag.html" class="button buy-button"
-                >Add to basket</a
-              >
-            </div>
-
-            <p>
+            <button class="buy-button" id="addToBagButton">Add to bag</button>
+            <p class="product-description" id="productDescription">
               A light -weight water-proof jacket that makes you ready to take on
               every challenge in every weather condition.
             </p>
-            <div class="rating">
-              <div>
-                <img src="images/Star.svg" alt="" />
-                <img src="images/Star.svg" alt="" />
-                <img src="images/Star.svg" alt="" />
-                <img src="images/Star.svg" alt="" />
-                <img src="images/Star.svg" alt="" />
-              </div>
-              <p>rated by customers who purchased this product</p>
-            </div>
           </div>
         </div>
       </section>
       <section class="product-list container">
-        <h2>Other products like this</h2>
-        <ul>
-          <li>
-            <div class="product-list__image">
-              <a href="product.html"
-                ><img
-                  src="/images/products/jacket5_500px.png"
-                  alt="Slim Fit Training Jacket"
-              /></a>
-            </div>
-            <h3>Slim Fit Rain Jacket</h3>
-            <p>Lorem ipsum, dolor sit amet.</p>
-            <div class="price-tag">NOK 1599.00</div>
-            <a href="product.html" class="button buy-button">Buy</a>
-          </li>
-          <li>
-            <div class="product-list__image">
-              <a href="product.html"
-                ><img
-                  src="/images/products/jacket6_500px.png"
-                  alt="Slim Fit Training Jacket"
-              /></a>
-            </div>
-            <h3>Slim Fit Rain Jacket</h3>
-            <p>Lorem ipsum, dolor sit amet.</p>
-            <div class="price-tag">NOK 1599.00</div>
-            <a href="product.html" class="button buy-button">Buy</a>
-          </li>
-          <li>
-            <div class="product-list__image">
-              <a href="product.html"
-                ><img
-                  src="/images/products/jacket7_500px.png"
-                  alt="Slim Fit Training Jacket"
-              /></a>
-            </div>
-            <h3>Slim Fit Rain Jacket</h3>
-            <p>Lorem ipsum, dolor sit amet.</p>
-            <div class="price-tag">NOK 1599.00</div>
-            <a href="product.html" class="button buy-button">Buy</a>
-          </li>
-          <li>
-            <div class="product-list__image">
-              <a href="product.html"
-                ><img
-                  src="/images/products/jacket1_500px.png"
-                  alt="Slim Fit Training Jacket"
-              /></a>
-            </div>
-            <h3>Slim Fit Rain Jacket</h3>
-            <p>Lorem ipsum, dolor sit amet.</p>
-            <div class="price-tag">NOK 1599.00</div>
-            <a href="product.html" class="button buy-button">Buy</a>
-          </li>
-        </ul>
+        <h2>Other products you might like</h2>
+        <ul id="otherProducts"></ul>
       </section>
     </main>
     <footer>
