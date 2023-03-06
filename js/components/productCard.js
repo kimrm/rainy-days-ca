@@ -29,7 +29,7 @@ export default function productCard(product) {
         } </div>
        <a href="product.html?item_number=${
          product.item_number
-       }" class="button buy-button">Buy</a>
+       }" class="button card__buy-button">Buy</a>
     </li>
     `;
 }

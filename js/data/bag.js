@@ -22,6 +22,10 @@ export function removeItemFromBag(item) {
   localStorage.setItem("bag", JSON.stringify(bag));
 }
 
+export function clearBag() {
+  localStorage.removeItem("bag");
+}
+
 export function getBagTotal() {
   const storedBag = localStorage.getItem("bag")
     ? localStorage.getItem("bag")

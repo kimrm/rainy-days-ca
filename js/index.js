@@ -1,5 +1,5 @@
 import { products, product, recommendations, deals } from "./data/products.js";
-import { countItemsInBag, getBagTotal } from "./data/bag.js";
+import { clearBag, countItemsInBag, getBagTotal } from "./data/bag.js";
 import productCard from "./components/productCard.js";
 import bagRow from "./components/bagRow.js";
 
@@ -32,6 +32,8 @@ async function checkoutSuccessPage() {
     checkoutProducts.innerHTML += productCard(item);
   });
   // then remove the bag items from the bag
+  clearBag();
+  getBagItemsCount();
 }
 
 // if there is a shopping bag element on the page, get the number of items in the bag
@@ -74,6 +76,14 @@ async function shoppingBagPage() {
   const bagItems = getBagItems();
   const allProducts = await products();
   const bagItemsList = document.querySelector(".shopping-bag-list");
+
+  if (bagItems.length === 0) {
+    const emptyMessage = document.createElement("p");
+    emptyMessage.textContent = "Your shopping bag is empty";
+    bagItemsList.appendChild(emptyMessage);
+    const sectionCheckout = document.querySelector(".section__checkout");
+    sectionCheckout.style.display = "none";
+  }
 
   bagItems.forEach((item) => {
     const bagProduct = allProducts.find(
@@ -144,6 +154,7 @@ async function productDetailsPage() {
 
   const productImage = document.querySelector("#product-image");
   const price = document.querySelector("#price");
+  const oldPrice = document.querySelector(".old-price");
   const productDescription = document.querySelector("#productDescription");
   const productTitle = document.querySelector("#productTitle");
   const productShortDescription = document.querySelector(
@@ -152,7 +163,11 @@ async function productDetailsPage() {
   productImage.src = item.image;
   productTitle.textContent = item.title;
   productShortDescription.textContent = item.short_description;
-  price.textContent = item.price.toString() + ".00";
+  const salePrice = item.deal
+    ? item.price - (item.price * item.deal.discount_percent) / 100
+    : item.price;
+  price.textContent = salePrice.toString();
+  oldPrice.textContent = item.deal ? item.price.toString() : "";
   productDescription.textContent = item.description;
 
   createEvents(itemNumber);
