@@ -685,6 +685,7 @@ form {
   row-gap: 2rem;
   margin: 2rem auto;
   line-height: 1.5rem;
+  padding: 0 1rem;
 }
 
 .footer-header {
@@ -1258,6 +1259,7 @@ form {
   }
 
   .footer-content {
+    padding: 0 2rem;
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-areas:
