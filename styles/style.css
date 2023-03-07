@@ -370,7 +370,7 @@ nav a:hover {
 }
 
 .call-to-action {
-  width: 200px;
+  max-width: 300px;
   color: var(--black);
   background-color: var(--green);
   text-transform: uppercase;
@@ -392,7 +392,7 @@ main {
   padding-top: 90px;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 3rem;
 }
 
 main > section {
@@ -486,8 +486,6 @@ h3 {
 .product-list ul {
   width: 100%;
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
   gap: 3rem;
 }
 
@@ -546,6 +544,10 @@ h3 {
   height: 60vh;
   background-color: var(--blue-green);
   color: var(--white);
+}
+
+.about .container {
+  padding: 2rem;
 }
 
 .about h4 {
@@ -1141,7 +1143,18 @@ form {
 
 /* media queries */
 
+@media screen and (min-width: 500px) {
+  .product-list ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 @media screen and (min-width: 800px) {
+  .product-list__image {
+    max-width: 175px;
+  }
+
   .shopping-bag {
     margin-right: 2rem;
   }
