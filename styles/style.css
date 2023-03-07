@@ -92,6 +92,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   transition: all 500ms;
+  position: relative;
 }
 
 .buy-button.added {
@@ -108,6 +109,28 @@ body {
 .buy-button:not(.added):not(.error):hover {
   background-color: var(--light-green);
   box-shadow: 0 0 20px 1px #00000014;
+}
+
+.wait-indicator {
+  background-color: var(--blue-green);
+  color: #fff;
+  cursor: not-allowed;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 10;
+  animation: button-waiting 3s forwards;
+  opacity: 0.5;
+}
+
+@keyframes button-waiting {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0%;
+  }
 }
 
 .card__buy-button {
@@ -191,7 +214,7 @@ h1 {
 }
 
 .nav-wrapper {
-  padding: 24px 0 24px 2rem;
+  padding: 2rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -236,7 +259,7 @@ nav a:hover {
 .hamburger-icon {
   position: absolute;
   z-index: 10;
-  right: 12px;
+  right: 2rem;
 }
 
 .hamburger:checked ~ nav {
@@ -261,7 +284,7 @@ nav a:hover {
 
 .shopping-bag {
   text-decoration: none;
-  margin-right: 4rem;
+  margin-right: 5rem;
   z-index: 11;
   position: relative;
 }
@@ -404,7 +427,7 @@ main > section > h1 {
 }
 
 main .container {
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 main .product-list,
@@ -547,13 +570,13 @@ h3 {
 }
 
 .about .container {
-  padding: 2rem;
+  padding: 0 2rem;
 }
 
 .about h4 {
   margin: 2rem 0;
   font-family: var(--josefin);
-  font-size: 3rem;
+  font-size: 1.5rem;
   color: var(--white);
 }
 
@@ -567,7 +590,7 @@ h3 {
   background-color: var(--green);
   color: #fff;
   padding: 12px 24px;
-  width: 300px;
+  max-width: 250px;
   text-transform: uppercase;
 }
 
@@ -1151,12 +1174,8 @@ form {
 }
 
 @media screen and (min-width: 800px) {
-  .product-list__image {
-    max-width: 175px;
-  }
-
   .shopping-bag {
-    margin-right: 2rem;
+    margin-right: 1rem;
   }
 
   .shopping-bag-list-header {
@@ -1203,7 +1222,6 @@ form {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 24px 0 24px 2rem;
   }
 
   .hamburger,
@@ -1233,7 +1251,6 @@ form {
   }
 
   .container {
-    max-width: 1200px;
     margin: 0 auto;
   }
 
@@ -1267,7 +1284,7 @@ form {
 
   .ratings .ratings-list {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 1rem;
   }
 
@@ -1292,10 +1309,8 @@ form {
     padding: 12px;
     border-radius: 15px;
   }
-}
 
-@media screen and (min-width: 1080px) {
-  main .container {
-    padding-left: 0 2rem;
+  .about h4 {
+    font-size: 4rem;
   }
 }
