@@ -792,6 +792,7 @@ input[type="range"]:focus::-ms-fill-upper {
 }
 
 .filter-sort {
+  color: var(--black);
   appearance: none;
   background: none;
   border: 1px solid var(--light-gray);
