@@ -907,6 +907,7 @@ input[type="range"]:focus::-ms-fill-upper {
   color: var(--dark-gray);
   text-transform: uppercase;
   text-align: center;
+  margin-top: 2rem;
 }
 
 .ratings .card .profile-img {
@@ -923,7 +924,7 @@ input[type="range"]:focus::-ms-fill-upper {
   background-color: var(--light-light-gray);
   padding: 1rem;
   border-radius: 5px;
-  margin: 5rem 0;
+  margin: 2rem 0;
 }
 
 .ratings .card .rating-content {
