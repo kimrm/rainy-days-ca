@@ -1323,6 +1323,7 @@ form {
 }
 
 .button {
+  color: var(--black);
   text-decoration: none;
   border-radius: 5px;
   display: flex;
