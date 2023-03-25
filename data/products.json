@@ -11,7 +11,9 @@
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "deal": {
         "discount_percent": 10
-      }
+      },
+      "stars": 4,
+      "new": true
     },
     {
       "item_number": "1002",
@@ -21,7 +23,8 @@
       "price": 1990,
       "image": "/images/products/jacket2_500px.png",
       "category": "men",
-      "sizes": ["S", "M", "L", "XL", "XXL"]
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "stars": 5
     },
     {
       "item_number": "1003",
@@ -34,7 +37,8 @@
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "deal": {
         "discount_percent": 5
-      }
+      },
+      "stars": 3
     },
     {
       "item_number": "1004",
@@ -44,7 +48,8 @@
       "price": 1590,
       "image": "/images/products/jacket4_500px.png",
       "category": "men",
-      "sizes": ["S", "M", "L", "XL", "XXL"]
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "stars": 4
     },
     {
       "item_number": "1005",
@@ -57,7 +62,8 @@
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "deal": {
         "discount_percent": 12
-      }
+      },
+      "stars": 5
     },
     {
       "item_number": "1006",
@@ -67,7 +73,8 @@
       "price": 2590,
       "image": "/images/products/jacket6_500px.png",
       "category": "women",
-      "sizes": ["S", "M", "L", "XL", "XXL"]
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "stars": 3
     },
     {
       "item_number": "1007",
@@ -77,7 +84,8 @@
       "price": 590,
       "image": "/images/products/jacket7_500px.png",
       "category": "women",
-      "sizes": ["S", "M", "L", "XL", "XXL"]
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "stars": 3
     },
     {
       "item_number": "1008",
@@ -90,17 +98,152 @@
       "sizes": ["S", "M", "L", "XL", "XXL"],
       "deal": {
         "discount_percent": 10
-      }
+      },
+      "stars": 4
     },
     {
       "item_number": "1009",
       "title": "DrenchDefense",
       "short_description": "Get ready to tackle even the heaviest downpours with DrenchDefense.",
       "description": "Get ready to tackle even the heaviest downpours with DrenchDefense. Its advanced waterproofing technology keeps you dry no matter how hard it rains, while its stylish design ensures that you look great while doing it.",
-      "price": 790,
+      "price": 749,
       "image": "/images/products/jacket9_500px.png",
       "category": "men",
-      "sizes": ["S", "M", "L", "XL", "XXL"]
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "stars": 5,
+      "new": true
+    },
+    {
+      "item_number": "1010",
+      "title": "DryShield",
+      "short_description": "A rain jacket that keeps you dry in all kinds of weather. ",
+      "description": "A rain jacket that keeps you dry in all kinds of weather. The jacket has a waterproof membrane that keeps the water out, and an adjustable hood that protects against the wind.",
+      "price": 390,
+      "image": "/images/products/jacket_4w.webp",
+      "category": "women",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "deal": {
+        "discount_percent": 5
+      },
+      "stars": 5
+    },
+    {
+      "item_number": "1011",
+      "title": "RainMaster",
+      "short_description": "A rain jacket designed to withstand the toughest weather conditions.",
+      "description": "A rain jacket designed to withstand the toughest weather conditions. The jacket has a durable outer shell that protects against wind and rain, and a soft, comfortable interior that keeps you warm and dry.",
+      "price": 4990,
+      "image": "/images/products/jacket_5w.webp",
+      "category": "women",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "deal": {
+        "discount_percent": 5
+      },
+      "stars": 5
+    },
+    {
+      "item_number": "1012",
+      "title": "StormGuard",
+      "short_description": "A rain jacket that is perfect for those days when the weather really turns nasty. ",
+      "description": "A rain jacket that is perfect for those days when the weather really turns nasty. The jacket has a large hood that protects against the wind and rain, and a long length that keeps you dry from head to toe.",
+      "price": 4590,
+      "image": "/images/products/jacket_1.webp",
+      "category": "men",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "stars": 5
+    },
+    {
+      "item_number": "1013",
+      "title": "Rainbow",
+      "short_description": "A rain jacket that is as colorful as it is functional. ",
+      "description": "A rain jacket that is as colorful as it is functional. The jacket has a waterproof membrane that keeps you dry, and comes in a range of different colors and patterns.",
+      "price": 790,
+      "image": "/images/products/jacket_2.webp",
+      "category": "men",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "stars": 5
+    },
+    {
+      "item_number": "1014",
+      "title": "CloudCover",
+      "short_description": "A rain jacket that is so light and comfortable that you almost forget you're wearing it.",
+      "description": "A rain jacket that is so light and comfortable that you almost forget you're wearing it. The jacket has a soft, breathable membrane that keeps you dry and comfortable, even on the warmest days.",
+      "price": 3490,
+      "image": "/images/products/jacket_3w.webp",
+      "category": "women",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "deal": {
+        "discount_percent": 10
+      },
+      "stars": 5
+    },
+    {
+      "item_number": "1015",
+      "title": "DelugeDominator",
+      "short_description": "When the rain comes pouring down, you need a rain jacket that can handle it.",
+      "description": "When the rain comes pouring down, you need a rain jacket that can handle it. DelugeDominator rain jacket is made of tough, waterproof material that keeps you dry and comfortable even in the heaviest rain. Its adjustable cuffs and hem ensure a snug fit, while its breathable fabric keeps you from getting too hot and sweaty.",
+      "price": 1890,
+      "image": "/images/products/jacket_6w.webp",
+      "category": "women",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "stars": 5,
+      "new": true
+    },
+    {
+      "item_number": "1016",
+      "title": "RainGuardian",
+      "short_description": "Stay protected from the rain with RainGuardian rain jacket. ",
+      "description": "Stay protected from the rain with RainGuardian rain jacket. Its water-resistant material and adjustable hood keep you dry and comfortable, while its stylish design makes you look good even in the wettest weather.",
+      "price": 749,
+      "image": "/images/products/jacket_7w.webp",
+      "category": "women",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "stars": 5
+    },
+    {
+      "item_number": "1017",
+      "title": "StormChaser",
+      "short_description": "For those who love to chase storms, StormChaser rain jacket is the perfect choice.",
+      "description": "For those who love to chase storms, StormChaser rain jacket is the perfect choice. Made of durable and waterproof material, this jacket keeps you protected and comfortable even in the wildest weather conditions.",
+      "price": 690,
+      "image": "/images/products/jacket_8w.webp",
+      "category": "women",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "stars": 3
+    },
+    {
+      "item_number": "1018",
+      "title": "AquaShield",
+      "short_description": "AquaShield rain jacket is designed to keep you dry and comfortable no matter how heavy the rain gets.",
+      "description": "AquaShield rain jacket is designed to keep you dry and comfortable no matter how heavy the rain gets. Its waterproof material and adjustable cuffs and hem ensure a snug fit, while its breathable fabric keeps you cool and dry.",
+      "price": 790,
+      "image": "/images/products/jacket_9w.webp",
+      "category": "men",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "stars": 3
+    },
+    {
+      "item_number": "1019",
+      "title": "ThunderSquad",
+      "short_description": "When the thunder rolls in, be prepared with ThunderSquad rain jacket.",
+      "description": "When the thunder rolls in, be prepared with ThunderSquad rain jacket. This jacket is made of tough, waterproof material that keeps you protected from the elements, while its stylish design ensures you look good no matter how bad the weather gets.",
+      "price": 1990,
+      "image": "/images/products/jacket_10.webp",
+      "category": "men",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "stars": 3
+    },
+    {
+      "item_number": "1020",
+      "title": "MistShield",
+      "short_description": "MistShield rain jacket is perfect for those damp, drizzly days when you need protection from light rain and mist.",
+      "description": "MistShield rain jacket is perfect for those damp, drizzly days when you need protection from light rain and mist. Its water-resistant material and adjustable hood keep you dry and comfortable, while its lightweight and breathable fabric make it perfect for all-day wear.",
+      "price": 1790,
+      "image": "/images/products/jacket_11.webp",
+      "category": "men",
+      "sizes": ["S", "M", "L", "XL", "XXL"],
+      "stars": 3,
+      "new": true
     }
   ],
   "categories": ["men", "women"]

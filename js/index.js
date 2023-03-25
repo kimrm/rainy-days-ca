@@ -1,12 +1,23 @@
-import { products, product, recommendations, deals } from "./data/products.js";
+import { products, product, computePrice } from "./data/products.js";
 import { clearBag, countItemsInBag, getBagTotal } from "./data/bag.js";
+import { bagItem as bagItemsRow } from "./components/bagItem.js";
 import productCard from "./components/productCard.js";
-import bagRow from "./components/bagRow.js";
+import { indexPage, collectionPage } from "./pages.js";
+import productRatings from "./components/productRatings.js";
 
-const shoppingBagTtemsTag = document.querySelector(".shopping-bag__item-tag");
+const shoppingBagItemsTag = document.querySelector(".shopping-bag__item-tag");
 const url = window.location.pathname;
 let selectedSize;
 let selectedPrice;
+
+window.addEventListener("scroll", (event) => {
+  const header = document.querySelector(".nav-wrapper");
+  if (window.scrollY > 100) {
+    header.classList.add("nav-wrapper-shrink");
+  } else {
+    header.classList.remove("nav-wrapper-shrink");
+  }
+});
 
 if (url.includes("/index.html") || url === "/") {
   indexPage();
@@ -34,104 +45,6 @@ async function checkoutSuccessPage() {
   // then remove the bag items from the bag
   clearBag();
   getBagItemsCount();
-}
-
-// if there is a shopping bag element on the page, get the number of items in the bag
-if (shoppingBagTtemsTag) {
-  getBagItemsCount(false);
-}
-
-function getBagItemsCount(withAnimation = true) {
-  const itemsCount = countItemsInBag();
-  if (itemsCount > 0) {
-    if (withAnimation) {
-      shoppingBagTtemsTag.classList.remove(
-        "shopping-bag__item-tag-filledNoAnimation"
-      );
-      shoppingBagTtemsTag.classList.remove("shopping-bag__item-tag-filled");
-      setTimeout(() => {
-        shoppingBagTtemsTag.classList.add("shopping-bag__item-tag-filled");
-      }, 200);
-    } else {
-      shoppingBagTtemsTag.classList.add(
-        "shopping-bag__item-tag-filledNoAnimation"
-      );
-    }
-
-    shoppingBagTtemsTag.textContent = countItemsInBag();
-  } else {
-    shoppingBagTtemsTag.classList.remove(
-      "shopping-bag__item-tag-filledNoAnimation"
-    );
-    shoppingBagTtemsTag.classList.remove("shopping-bag__item-tag-filled");
-  }
-}
-
-function getBagItems() {
-  const bagItems = JSON.parse(localStorage.getItem("bag")) || [];
-  return bagItems;
-}
-
-async function shoppingBagPage() {
-  const bagItems = getBagItems();
-  const allProducts = await products();
-  const bagItemsList = document.querySelector(".shopping-bag-list");
-
-  if (bagItems.length === 0) {
-    const emptyMessage = document.createElement("p");
-    emptyMessage.textContent = "Your shopping bag is empty";
-    bagItemsList.appendChild(emptyMessage);
-    const sectionCheckout = document.querySelector(".section__checkout");
-    sectionCheckout.style.display = "none";
-  }
-
-  bagItems.forEach((item) => {
-    const bagProduct = allProducts.find(
-      (product) => product.item_number === item.item
-    );
-    const bagItem = {
-      item_number: item.item,
-      title: bagProduct.title,
-      image: bagProduct.image,
-      price: item.price,
-      quantity: item.amount,
-      size: item.size,
-    };
-    const bagItemRow = bagRow(bagItem);
-
-    // bagItemRow.forEach((element) => {
-    //   bagItemsList.appendChild(element);
-    // });
-
-    bagItemsList.appendChild(bagItemRow);
-
-    window.addEventListener("removed", (event) => {
-      event.stopPropagation();
-      removedFromBag(event.id);
-    });
-
-    const bagTotal = document.querySelector("#bagTotal");
-    bagTotal.textContent = "NOK " + getBagTotal().toString();
-  });
-}
-
-function removedFromBag(id) {
-  const bagItemsList = document.querySelector(".shopping-bag-list");
-  const bagItem = document.getElementById(id);
-
-  if (bagItem) {
-    bagItemsList.removeChild(bagItem);
-
-    getBagItemsCount();
-
-    const bagTotal = document.querySelector("#bagTotal");
-    bagTotal.textContent = "NOK " + getBagTotal().toString();
-  }
-}
-
-function indexPage() {
-  getRecommendations();
-  getDeals();
 }
 
 async function productDetailsPage() {
@@ -163,17 +76,19 @@ async function productDetailsPage() {
   productImage.src = item.image;
   productTitle.textContent = item.title;
   productShortDescription.textContent = item.short_description;
-  const salePrice = item.deal
-    ? item.price - (item.price * item.deal.discount_percent) / 100
-    : item.price;
-  price.textContent = salePrice.toString();
-  oldPrice.textContent = item.deal ? item.price.toString() : "";
+
+  const salePrice = computePrice(item);
+  price.textContent = salePrice.toString() + ",00";
+  oldPrice.textContent = item.deal ? item.price.toString() + ",00" : "";
   productDescription.textContent = item.description;
+
+  const ratingStars = document.querySelector(".rating-stars");
+  ratingStars.innerHTML = productRatings(item);
 
   createEvents(itemNumber);
 }
 
-function createEvents(itemNumber) {
+function createSizeInputEvent() {
   const sizesInput = document.querySelectorAll(".radio");
   sizesInput.forEach((element) => {
     element.checked = false;
@@ -181,7 +96,9 @@ function createEvents(itemNumber) {
       selectedSize = event.target.value;
     });
   });
+}
 
+function createAmountInputEvents() {
   const itemAmountInput = document.querySelector("#itemAmount");
   itemAmountInput.addEventListener("keydown", (event) => {
     if (
@@ -216,7 +133,10 @@ function createEvents(itemNumber) {
       : parseInt(itemAmountInput.value);
     itemAmountInput.value = numberValue + 1;
   });
+}
 
+function createAddToBagEvent(itemNumber) {
+  const itemAmountInput = document.querySelector("#itemAmount");
   const addToBagButton = document.querySelector("#addToBagButton");
   addToBagButton.addEventListener("click", (event) => {
     if (!selectedSize) {
@@ -262,6 +182,106 @@ function createEvents(itemNumber) {
   });
 }
 
+function createEvents(itemNumber) {
+  // ------------------ Purchase item events ------------------
+  createSizeInputEvent();
+
+  createAmountInputEvents();
+
+  createAddToBagEvent(itemNumber);
+}
+
+// ------------------ Shopping bag functions ------------------
+
+if (shoppingBagItemsTag) {
+  getBagItemsCount(false);
+}
+
+function getBagItemsCount(withAnimation = true) {
+  const itemsCount = countItemsInBag();
+  if (itemsCount > 0) {
+    if (withAnimation) {
+      shoppingBagItemsTag.classList.remove(
+        "shopping-bag__item-tag-filledNoAnimation"
+      );
+      shoppingBagItemsTag.classList.remove("shopping-bag__item-tag-filled");
+      setTimeout(() => {
+        shoppingBagItemsTag.classList.add("shopping-bag__item-tag-filled");
+      }, 200);
+    } else {
+      shoppingBagItemsTag.classList.add(
+        "shopping-bag__item-tag-filledNoAnimation"
+      );
+    }
+
+    shoppingBagItemsTag.textContent = countItemsInBag();
+  } else {
+    shoppingBagItemsTag.classList.remove(
+      "shopping-bag__item-tag-filledNoAnimation"
+    );
+    shoppingBagItemsTag.classList.remove("shopping-bag__item-tag-filled");
+  }
+}
+
+function getBagItems() {
+  const bagItems = JSON.parse(localStorage.getItem("bag")) || [];
+  return bagItems;
+}
+
+async function shoppingBagPage() {
+  const bagItems = getBagItems();
+  const allProducts = await products();
+  const bagItemsList = document.querySelector(".shopping-bag-list");
+
+  if (bagItems.length === 0) {
+    const emptyMessage = document.createElement("p");
+    emptyMessage.textContent = "Your shopping bag is empty";
+    bagItemsList.appendChild(emptyMessage);
+    const sectionCheckout = document.querySelector(".section__checkout");
+    sectionCheckout.style.display = "none";
+  }
+
+  bagItems.forEach((item) => {
+    const bagProduct = allProducts.find(
+      (product) => product.item_number === item.item
+    );
+    const bagItem = {
+      item_number: item.item,
+      title: bagProduct.title,
+      image: bagProduct.image,
+      price: item.price,
+      amount: item.amount,
+      size: item.size,
+      totalPrice: item.price * item.amount,
+    };
+    const bagItemRowDiv = bagItemsRow(bagItem);
+
+    bagItemsList.appendChild(bagItemRowDiv);
+
+    window.addEventListener("removed", (event) => {
+      event.stopPropagation();
+      removedFromBag(event.id);
+    });
+
+    const bagTotal = document.querySelector("#bagTotal");
+    bagTotal.textContent = `NOK ${getBagTotal().toString()},00`;
+  });
+}
+
+function removedFromBag(id) {
+  const bagItemsList = document.querySelector(".shopping-bag-list");
+  const bagItem = document.getElementById(id);
+
+  if (bagItem) {
+    bagItemsList.removeChild(bagItem);
+
+    getBagItemsCount();
+
+    const bagTotal = document.querySelector("#bagTotal");
+    bagTotal.textContent = "NOK " + getBagTotal().toString();
+  }
+}
+
 function addToBag(itemNumber, selectedSize, amount, price) {
   const storedBag = localStorage.getItem("bag")
     ? localStorage.getItem("bag")
@@ -291,33 +311,4 @@ function addToBag(itemNumber, selectedSize, amount, price) {
     items += parseInt(element.amount);
   });
   return items;
-}
-
-async function collectionPage() {
-  const productsList = document.querySelector(".product-list ul");
-  const items = await products();
-  items.forEach((element) => {
-    const item = productCard(element);
-    productsList.innerHTML += item;
-  });
-}
-
-async function getRecommendations() {
-  const recommendationsUl = document.querySelector("#recommendations");
-  recommendationsUl.innerHTML = "";
-  const recommendationsProducts = await recommendations(4);
-  recommendationsProducts.forEach((product) => {
-    const item = productCard(product);
-    recommendationsUl.innerHTML += item;
-  });
-}
-
-async function getDeals() {
-  const dealsUl = document.querySelector("#deals");
-  dealsUl.innerHTML = "";
-  const dealsProducts = await deals();
-  dealsProducts.forEach((product) => {
-    const item = productCard(product);
-    dealsUl.innerHTML += item;
-  });
 }

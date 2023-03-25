@@ -76,9 +76,14 @@
         <div class="container shopping-bag-top">
           <h1>Shopping bag</h1>
           <p>Review your items in the shopping bag and proceed to checkout</p>
+          <div>
+            <a href="#checkout" class="go-to-checkout-link"
+              >Go to Checkout <i class="fa-solid fa-arrow-down green"></i
+            ></a>
+          </div>
         </div>
         <div class="container">
-          <div class="shopping-bag-list">
+          <div class="shopping-bag-list" title="Shopping bag contents">
             <div class="shopping-bag-list-header">
               <div class="shopping-bag-list__first-heading">Item</div>
               <div class="shopping-bag-list__heading">Quantity</div>
@@ -95,6 +100,13 @@
           <div class="total-cost">
             <p>Total cost</p>
             <p id="bagTotal"></p>
+          </div>
+          <div>
+            <p class="message-box message-box__info">
+              Currently, only payment option for your order is invoicing. Please
+              note that we need to run a credit check before completing your
+              order.
+            </p>
           </div>
           <form action="checkout-success.html" method="get" class="form">
             <h2>Please enter your invoice info</h2>
@@ -183,7 +195,7 @@
             <li><a href="collection.html">Out Jacket Collection</a></li>
             <li><a href="about.html">About us</a></li>
             <li><a href="contact.html">Contact us</a></li>
-            <li><a href="checkout.html">Shopping Bag & Checkout</a></li>
+            <li><a href="shopping-bag.html">Shopping Bag & Checkout</a></li>
           </ul>
         </div>
         <div class="footer-address">

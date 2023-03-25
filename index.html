@@ -31,6 +31,10 @@
       })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
     </script>
     <script src="./js/index.js" type="module"></script>
+    <script
+      src="https://kit.fontawesome.com/33714fa395.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Rainy Days - Great rain jackets</title>
   </head>
   <body>
@@ -45,19 +49,13 @@
           id="hamburger-menu"
           class="hamburger"
         />
-        <a href="/" aria-roledescription="Home link"
+        <a href="/" aria-roledescription="Home link" title="Home link"
           ><img
             class="logo"
             src="images/RainyDays_cropped.png"
             alt="Rainy Days logo"
         /></a>
         <nav>
-          <a href="/" aria-roledescription="Home link"
-            ><img
-              class="logo nav__logo"
-              src="images/RainyDays_cropped.png"
-              alt="Rainy Days logo"
-          /></a>
           <ul>
             <li><a href="collection.html">Our Collection</a></li>
             <li><a href="about.html">About Us</a></li>
@@ -72,46 +70,65 @@
     </header>
     <main>
       <section class="hero hero-section">
+        <video controls autoplay preload="auto" class="hero-video">
+          <source
+            id="hero_video_source"
+            src="/images/nature.mp4"
+            type="video/mp4"
+          />
+        </video>
         <div class="container">
           <h1>Pushing The Comfort Zone</h1>
           <p>
             Beautiful hand-crafted waterproof jackets for the no-compromise
             outdoor people
           </p>
-          <a href="collection.html" class="button call-to-action"
-            >See our Collection</a
-          >
-        </div>
-      </section>
-      <section class="product-list container">
-        <h2>Recommended for you</h2>
-        <ul id="recommendations"></ul>
-      </section>
-      <section>
-        <div class="about">
-          <div class="container">
-            <h4>Pushing the comfort zone since 1923</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa
-              mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien
-              fringilla, mattis ligula consectetur, ultrices mauris. Maecenas
-              vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum
-              auctor ornare leo, non suscipit magna interdum eu. Curabitur
-              pellentesque nibh nibh, at maximus ante.
-            </p>
-            <a href="about.html" class="button about-button"
-              >Read more about us</a
+          <div class="cta-button-group">
+            <a href="collection.html?for=women" class="button call-to-action"
+              >Women's collection</a
+            >
+            <a href="collection.html?for=men" class="button call-to-action"
+              >Men's collection</a
             >
           </div>
         </div>
       </section>
+
       <section class="product-list container">
         <h2>Great deals right now</h2>
-        <ul id="deals"></ul>
+        <ul id="deals" title="List of discounted jackets"></ul>
       </section>
+      <section class="about">
+        <div class="container">
+          <div class="about-wrapper">
+            <h4>Pushing the comfort zone</h4>
+            <p>
+              Pushing the comfort zone is a crucial step towards personal growth
+              and self-improvement. It means challenging yourself to step
+              outside of your familiar routines and embrace new experiences,
+              even if they feel uncomfortable or intimidating at first. By
+              pushing your comfort zone, you develop resilience, confidence, and
+              the ability to handle uncertainty and change. It's a powerful way
+              to expand your horizons, discover your true potential, and live a
+              more fulfilling life. Remember, the magic happens outside of your
+              comfort zone!
+            </p>
+            <div class="cta-button-group">
+              <a href="about.html" class="button call-to-action">Read more</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="product-list container">
+        <h2>Recommended for you</h2>
+        <ul
+          id="recommendations"
+          title="List of jackets recommended for you"
+        ></ul>
+      </section>
+
       <section>
         <div class="container ratings">
-          <h4>What our customers say</h4>
           <div class="ratings-list">
             <div class="card">
               <div class="rating-content">
@@ -120,19 +137,20 @@
                   alt="Rating person 1"
                   class="profile-img"
                 />
-                <p class="review-name">Sarah</p>
+                <p class="review-name">Review by Sarah</p>
                 <p>
-                  I recently ordered the MistMaster jacket from this web shop
-                  and I'm extremely happy with my purchase! The website was easy
-                  to navigate and the checkout process was smooth.
+                  &quot;I recently ordered the MistMaster jacket from this web
+                  shop and I'm extremely happy with my purchase! The website was
+                  easy to navigate and the checkout process was smooth.&quot;
                 </p>
               </div>
               <div>
-                <img src="images/Star.svg" alt="Person 1 Star rating 1" />
-                <img src="images/Star.svg" alt="Person 1 Star rating 2" />
-                <img src="images/Star.svg" alt="Person 1 Star rating 3" />
-                <img src="images/Star.svg" alt="Person 1 Star rating 4" />
-                <img src="images/Star.svg" alt="Person 1 Star rating 5" />
+                <i class="fa-solid fa-star starred"></i>
+                <i class="fa-solid fa-star starred"></i>
+                <i class="fa-solid fa-star starred"></i>
+                <i class="fa-solid fa-star starred"></i>
+                <i class="fa-solid fa-star starred"></i>
+                <span class="rating-count">(5 stars)</span>
               </div>
             </div>
             <div class="card">
@@ -142,19 +160,20 @@
                   alt="Rating person 2"
                   class="profile-img"
                 />
-                <p class="review-name">John</p>
+                <p class="review-name">Review by John</p>
                 <p>
-                  had a great experience shopping on this web shop. I was
+                  &quot;had a great experience shopping on this web shop. I was
                   looking for a new rain jacket and was impressed with the wide
-                  selection they had available.
+                  selection they had available.&quot;
                 </p>
               </div>
               <div>
-                <img src="images/Star.svg" alt="Person 2 Star rating 1" />
-                <img src="images/Star.svg" alt="Person 2 Star rating 2" />
-                <img src="images/Star.svg" alt="Person 2 Star rating 3" />
-                <img src="images/Star.svg" alt="Person 2 Star rating 4" />
-                <img src="images/Star.svg" alt="Person 2 Star rating 5" />
+                <i class="fa-solid fa-star starred"></i>
+                <i class="fa-solid fa-star starred"></i>
+                <i class="fa-solid fa-star starred"></i>
+                <i class="fa-solid fa-star starred"></i>
+                <i class="fa-solid fa-star starred"></i>
+                <span class="rating-count">(5 stars)</span>
               </div>
             </div>
             <div class="card">
@@ -164,19 +183,20 @@
                   alt="Rating person 3"
                   class="profile-img"
                 />
-                <p class="review-name">Paul</p>
+                <p class="review-name">Review by Paul</p>
                 <p>
-                  The shipping was fast and the jacket arrived in perfect
+                  &quot;The shipping was fast and the jacket arrived in perfect
                   condition. I wore it to a party and received so many
-                  compliments. I'll definitely be shopping here again!
+                  compliments. I'll definitely be shopping here again!&quot;
                 </p>
               </div>
               <div>
-                <img src="images/Star.svg" alt="Person 3 Star rating 1" />
-                <img src="images/Star.svg" alt="Person 3 Star rating 2" />
-                <img src="images/Star.svg" alt="Person 3 Star rating 3" />
-                <img src="images/Star.svg" alt="Person 3 Star rating 4" />
-                <img src="images/Star.svg" alt="Person 3 Star rating 5" />
+                <i class="fa-solid fa-star starred"></i>
+                <i class="fa-solid fa-star starred"></i>
+                <i class="fa-solid fa-star starred"></i>
+                <i class="fa-solid fa-star starred"></i>
+                <i class="fa-solid fa-star starred"></i>
+                <span class="rating-count">(5 stars)</span>
               </div>
             </div>
           </div>
@@ -194,7 +214,7 @@
             <li><a href="collection.html">Out Jacket Collection</a></li>
             <li><a href="about.html">About us</a></li>
             <li><a href="contact.html">Contact us</a></li>
-            <li><a href="checkout.html">Shopping Bag & Checkout</a></li>
+            <li><a href="shopping-bag.html">Shopping Bag & Checkout</a></li>
           </ul>
         </div>
         <div class="footer-address">

@@ -27,6 +27,11 @@
         a.appendChild(r);
       })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
     </script>
+    <script src="./js/index.js" type="module"></script>
+    <script
+      src="https://kit.fontawesome.com/33714fa395.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Rainy Days - Contact success</title>
   </head>
   <body>
@@ -67,7 +72,7 @@
       </div>
     </header>
     <main>
-      <section>
+      <section class="contact-success-section">
         <div class="container">
           <div class="message-box message-box__success" id="message-box">
             <p>
@@ -110,7 +115,13 @@
                 placeholder="Message.."
               ></textarea>
             </div>
-            <input class="form-submit" type="submit" value="Send message" />
+            <div>
+              <input
+                class="button form-submit"
+                type="submit"
+                value="Send message"
+              />
+            </div>
           </form>
         </div>
       </section>
