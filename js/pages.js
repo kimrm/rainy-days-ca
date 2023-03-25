@@ -21,10 +21,12 @@ export function indexPage() {
     if (playing === 1) {
       src.src = "/images/nature.mp4";
       video.load();
+      video.play();
       playing = 0;
     } else {
       src.src = "/images/nature2.mp4";
       video.load();
+      video.play();
       playing = 1;
     }
   });
