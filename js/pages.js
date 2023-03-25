@@ -15,21 +15,6 @@ export function indexPage() {
   const video = document.querySelector(".hero-video");
   video.controls = false;
   video.play();
-  const src = document.getElementById("hero_video_source");
-  let playing = 0;
-  video.addEventListener("ended", () => {
-    if (playing === 1) {
-      src.src = "/images/nature.mp4";
-      video.load();
-      video.play();
-      playing = 0;
-    } else {
-      src.src = "/images/nature2.mp4";
-      video.load();
-      video.play();
-      playing = 1;
-    }
-  });
 }
 
 async function getRecommendations() {
