@@ -20,7 +20,7 @@ export function indexPage() {
 async function getRecommendations() {
   const recommendationsUl = document.querySelector("#recommendations");
   recommendationsUl.innerHTML = "";
-  const recommendationsProducts = await recommendations(5);
+  const recommendationsProducts = await recommendations(10);
   recommendationsProducts.forEach((product) => {
     const item = productCard(product);
     recommendationsUl.innerHTML += item;

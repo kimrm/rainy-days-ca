@@ -6,5 +6,7 @@ export default function productRatings(product) {
       stars >= i ? "starred" : "unstarred"
     }"></i>`;
   }
-  return html + `<span class="rating-count">(${product.stars} stars)</span>`;
+  return (
+    html + `<span class="rating-count">(${product.stars} of 5 stars)</span>`
+  );
 }
