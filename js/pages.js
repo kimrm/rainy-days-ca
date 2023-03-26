@@ -14,6 +14,7 @@ export function indexPage() {
   getDeals();
   const video = document.querySelector(".hero-video");
   video.controls = false;
+  video.muted = true;
   video.play();
 }
 
