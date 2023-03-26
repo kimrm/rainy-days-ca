@@ -19,6 +19,12 @@ export function indexPage() {
       video.play();
     }
   });
+  document.addEventListener("touchstart", (event) => {
+    const video = document.querySelector(".hero-video");
+    if (!video.playing) {
+      video.play();
+    }
+  });
 }
 
 async function getRecommendations() {
