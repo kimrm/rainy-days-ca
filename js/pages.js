@@ -12,6 +12,11 @@ import productCard from "./components/productCard.js";
 export function indexPage() {
   getRecommendations();
   getDeals();
+
+  document.addEventListener("load", (event) => {
+    const video = document.querySelector(".hero-video");
+    video.play();
+  });
 }
 
 async function getRecommendations() {
