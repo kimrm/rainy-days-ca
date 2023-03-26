@@ -13,9 +13,11 @@ export function indexPage() {
   getRecommendations();
   getDeals();
 
-  document.addEventListener("load", (event) => {
+  document.addEventListener("click", (event) => {
     const video = document.querySelector(".hero-video");
-    video.play();
+    if (!video.playing) {
+      video.play();
+    }
   });
 }
 
