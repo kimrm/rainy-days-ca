@@ -1,0 +1,95 @@
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.modal-footer {
+  margin-top: 1rem;
+}
+.modal-backdrop {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+.modal-content {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  position: absolute;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  z-index: 101;
+  animation: popup 0.3s ease-in-out;
+}
+
+@keyframes popup {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.modal-container input,
+.modal-container textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+.modal-container label {
+  display: block;
+}
+
+.modal-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.modal-container .btn-cancel,
+.modal-container .btn-ok {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.modal-container .btn-group {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.modal-container .btn-cancel {
+  background-color: #ccc;
+  color: #000;
+}
+
+.modal-container .btn-ok {
+  background-color: var(--green);
+  color: #000;
+}

@@ -1,78 +1,50 @@
 import {
-  recommendations,
-  deals,
   loadFilter,
   saveFilter,
-  filteredProducts,
-} from "./data/products.js";
-import productCard from "./components/productCard.js";
+  fetchFilteredProducts,
+  convertProductObject,
+  filterProducts,
+} from "../data/products.js";
+import productCard, {
+  productCardPlaceholder,
+} from "../components/productCard.js";
 
-// ------------------ Index page ------------------
+let filterSettings;
 
-export function indexPage() {
-  getRecommendations();
-  getDeals();
+export default async function productCollectionPage() {
+  initializeProperties();
 
-  document.addEventListener("click", (event) => {
-    const video = document.querySelector(".hero-video");
-    if (!video.playing) {
-      video.play();
-    }
-  });
-  document.addEventListener("touchstart", (event) => {
-    const video = document.querySelector(".hero-video");
-    if (!video.playing) {
-      video.play();
-    }
-  });
+  addEvents();
+
+  populateFilterInputsFromStorage();
+
+  renderCollectionView();
 }
 
-async function getRecommendations() {
-  const recommendationsUl = document.querySelector("#recommendations");
-  recommendationsUl.innerHTML = "";
-  const recommendationsProducts = await recommendations(10);
-  recommendationsProducts.forEach((product) => {
-    const item = productCard(product);
-    recommendationsUl.innerHTML += item;
-  });
-}
-
-async function getDeals() {
-  const dealsUl = document.querySelector("#deals");
-  dealsUl.innerHTML = "";
-  const dealsProducts = await deals();
-  dealsProducts.forEach((product) => {
-    const item = productCard(product);
-    dealsUl.innerHTML += item;
-  });
-}
-
-// ------------------ Collection page ------------------
-
-let filterSettings = loadFilter();
-
-export async function collectionPage() {
+function initializeProperties() {
+  filterSettings = loadFilter();
   // get query parameters
   const query = new URLSearchParams(window.location.search);
   const collectionForParameter = query.get("for");
   if (collectionForParameter) {
-    filterSettings.genders = [];
-    filterSettings.genders.push(collectionForParameter);
+    // set filterSettings gender to only the received parameter
+    filterSettings.genders = [collectionForParameter];
   }
+}
 
-  createFilterEvents();
-  const productsList = document.querySelector(".product-list ul");
+function addEvents() {
+  addFilterEvents();
+}
 
-  const storedFilterMaxPrice = filterSettings.maxPrice;
+function populateFilterInputsFromStorage() {
   const filterMaxPrice = document.querySelector("#max_price");
-  filterMaxPrice.value = storedFilterMaxPrice;
   const maxPriceLabel = document.querySelector(".max-price-slider-value");
-  maxPriceLabel.textContent = storedFilterMaxPrice;
-
   const filterSort = document.querySelector("#filter_sort");
-  filterSort.value = filterSettings.sort;
-
   const filterGender = document.querySelectorAll(".filter-gender");
+
+  filterMaxPrice.value = filterSettings.maxPrice;
+  maxPriceLabel.textContent = filterSettings.maxPrice;
+  filterSort.value = filterSettings.sortMode;
   filterGender.forEach((element) => {
     if (filterSettings.genders.includes(element.id)) {
       element.children[0].classList.remove("fa-regular");
@@ -84,11 +56,17 @@ export async function collectionPage() {
       element.children[0].classList.remove("green");
     }
   });
-
-  filterProducts();
 }
 
-function createFilterEvents() {
+function addFilterEvents() {
+  addFilterGenderEvent();
+
+  addFilterPriceRangeEvent();
+
+  addFilterSortEvent();
+}
+
+function addFilterGenderEvent() {
   const filterGender = document.querySelectorAll(".filter-gender");
   filterGender.forEach((element) => {
     element.addEventListener("click", (event) => {
@@ -106,32 +84,49 @@ function createFilterEvents() {
           (item) => item !== element.id
         );
       }
-      filterProducts();
+      renderCollectionView();
     });
-  });
-  const priceRange = document.querySelector("#max_price");
-  priceRange.addEventListener("input", (event) => {
-    const maxPriceLabel = document.querySelector(".max-price-slider-value");
-    maxPriceLabel.textContent = event.target.value;
-    filterSettings.maxPrice = event.target.value;
-    filterProducts();
-  });
-  const filterSort = document.querySelector(".filter-sort");
-  filterSort.addEventListener("change", (event) => {
-    filterSettings.sort = event.target.value;
-    filterProducts();
   });
 }
 
-async function filterProducts() {
+function addFilterPriceRangeEvent() {
+  const priceRange = document.querySelector("#max_price");
+  let debounceTimerId;
+  priceRange.addEventListener("input", (event) => {
+    // debounce event so it doesn't fire too often
+    const maxPriceLabel = document.querySelector(".max-price-slider-value");
+    maxPriceLabel.textContent = event.target.value;
+    filterSettings.maxPrice = event.target.value;
+    clearTimeout(debounceTimerId);
+    debounceTimerId = setTimeout(() => {
+      renderCollectionView();
+    }, 1000);
+  });
+}
+
+function addFilterSortEvent() {
+  const filterSort = document.querySelector(".filter-sort");
+  filterSort.addEventListener("change", (event) => {
+    filterSettings.sortMode = event.target.value;
+    renderCollectionView();
+  });
+}
+
+function renderCollectionView() {
   saveFilter(filterSettings);
-
-  const items = await filteredProducts(filterSettings);
-
   const productsList = document.querySelector(".product-list ul");
   productsList.innerHTML = "";
-  items.forEach((element) => {
-    const item = productCard(element);
-    productsList.innerHTML += item;
+
+  for (let i = 0; i < 20; i++) {
+    productsList.innerHTML += productCardPlaceholder();
+  }
+
+  filterProducts().then((items) => {
+    productsList.innerHTML = "";
+    items.forEach((element) => {
+      const product = convertProductObject(element);
+      const item = productCard(product);
+      productsList.appendChild(item);
+    });
   });
 }

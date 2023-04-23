@@ -38,3 +38,39 @@ export function getBagTotal() {
 
   return total;
 }
+
+export function getBagItems() {
+  const bagItems = JSON.parse(localStorage.getItem("bag")) || [];
+  return bagItems;
+}
+
+export function addToBag(itemNumber, selectedSize, amount, price) {
+  const storedBag = localStorage.getItem("bag")
+    ? localStorage.getItem("bag")
+    : "[]";
+  let bag = JSON.parse(storedBag);
+  let itemExists = false;
+  bag = bag.map((item) => {
+    if (item.item === itemNumber && item.size === selectedSize) {
+      item.amount = parseInt(item.amount) + parseInt(amount);
+      itemExists = true;
+    }
+    return item;
+  });
+  if (!itemExists) {
+    bag.push({
+      item: itemNumber,
+      size: selectedSize,
+      amount: parseInt(amount),
+      price: price,
+    });
+  }
+
+  localStorage.setItem("bag", JSON.stringify(bag));
+
+  let items = 0;
+  bag.forEach((element) => {
+    items += parseInt(element.amount);
+  });
+  return items;
+}

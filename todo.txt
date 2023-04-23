@@ -1,0 +1,7 @@
+- fix rating functionality
+    send rating to wp api
+    read rating from wp api
+- fix collection filtering
+- cleanup and organize js code
+- cleanup and organize css
+- write sizes from api in product card

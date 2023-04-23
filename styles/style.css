@@ -1,3 +1,5 @@
+@import url("modal.css");
+
 :root {
   --green: #b9bf04;
   --light-green: #c9cc5e;
@@ -593,11 +595,15 @@ h3 {
 }
 
 .unstarred {
+  cursor: pointer;
   color: var(--light-gray);
+  transition: all 1s ease-in-out;
 }
 
 .starred {
+  cursor: pointer;
   color: var(--starred);
+  transition: all 0.5s ease-in-out;
 }
 
 .product-name-link {
@@ -613,6 +619,7 @@ h3 {
   padding: 1rem;
   text-align: center;
   border-radius: 10px;
+  min-height: 150px;
 }
 
 .product-list h1 {
@@ -899,6 +906,68 @@ input[type="range"]:focus::-ms-fill-upper {
   font-size: 0.8rem;
   margin: 0;
   color: var(--dark-gray);
+}
+
+.product-card {
+  transition: all 0.2s ease-in-out;
+  animation: display-product-card 1s ease-in-out;
+}
+
+@keyframes display-product-card {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loader-placeholder-image {
+  width: 100%;
+  height: 200px;
+  background-color: var(--light-gray);
+  border-radius: 10px;
+  animation: loader-placeholder 2s infinite;
+}
+
+@keyframes loader-placeholder {
+  0% {
+    background-color: var(--light-gray);
+    color: var(--light-gray);
+  }
+  50% {
+    background-color: var(--light-light-gray);
+    color: var(--light-light-gray);
+  }
+  100% {
+    background-color: var(--light-gray);
+    color: var(--light-gray);
+  }
+}
+
+.loader-placeholder-text {
+  width: 100%;
+  height: 1rem;
+  margin: 0.5rem 0;
+  background-color: var(--light-gray);
+  color: var(--light-gray);
+  border-radius: 10px;
+  animation: loader-placeholder 2s infinite;
+}
+
+.load-image {
+  animation: load-image 1s ease-in-out;
+}
+
+@keyframes load-image {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .ratings h4 {
