@@ -42,7 +42,7 @@ HtmlElement.prototype.appendChild = function (child) {
 };
 
 HtmlElement.prototype.appendChildren = function (...children) {
-  children.forEach((child) => this.element.appendChild(child));
+  children.forEach((child) => this.element.appendChild(child.element));
   return this;
 };
 
@@ -58,5 +58,12 @@ HtmlElement.prototype.setDataset = function (key, value) {
 
 HtmlElement.prototype.setValue = function (value) {
   this.element.value = value;
+  return this;
+};
+
+HtmlElement.prototype.setAttributes = function (attributes) {
+  Object.entries(attributes).forEach(([key, value]) => {
+    this.element.setAttribute(key, value);
+  });
   return this;
 };

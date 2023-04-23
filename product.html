@@ -85,17 +85,22 @@
         </div>
       </section>
       <section class="product">
+        <div class="loader">Fetching product... hang on.</div>
         <div class="container">
           <div class="image-container">
-            <img class="product-image" id="product-image" src="" alt="jacket" />
+            <img
+              class="product-image"
+              id="product-image"
+              src="./images/products/woocommerce-placeholder.png"
+              alt="jacket"
+            />
           </div>
-          <div class="options-container">
+          <div class="options-container hidden">
             <div class="product-title-container">
               <h1 id="productTitle"></h1>
-              <p
-                class="product-short-description"
-                id="productShortDescription"
-              ></p>
+              <p class="product-short-description" id="productShortDescription">
+                Fetching product. Please hang on a sec....
+              </p>
               <div class="rating">
                 <div class="rating-stars"></div>
                 <p>rated by customers who purchased this product</p>
@@ -115,48 +120,7 @@
                       >Please select your size</span
                     >
                   </span>
-                  <div class="size-options-group">
-                    <div class="size-option">
-                      <input
-                        class="radio"
-                        type="radio"
-                        name="size"
-                        id="sizeS"
-                        value="s"
-                      />
-                      <label for="sizeS">S</label>
-                    </div>
-                    <div class="size-option">
-                      <input
-                        class="radio"
-                        type="radio"
-                        name="size"
-                        id="sizeM"
-                        value="m"
-                      />
-                      <label for="sizeM">M</label>
-                    </div>
-                    <div class="size-option">
-                      <input
-                        class="radio"
-                        type="radio"
-                        name="size"
-                        id="sizeL"
-                        value="l"
-                      />
-                      <label for="sizeL">L</label>
-                    </div>
-                    <div class="size-option">
-                      <input
-                        class="radio"
-                        type="radio"
-                        name="size"
-                        id="sizeXL"
-                        value="xl"
-                      />
-                      <label for="sizeXL">XL</label>
-                    </div>
-                  </div>
+                  <div class="size-options-group"></div>
                 </div>
               </div>
               <div class="options-field">

@@ -3,10 +3,11 @@ import {
   fetchProduct,
   convertProductObject,
 } from "../data/products.js";
-import { countItemsInBag, getBagItems, addToBag } from "../data/bag.js";
+import { getBagItems, addToBag } from "../data/bag.js";
 import productCard from "../components/productCard.js";
 import { productRatingElements } from "../components/productRatings.js";
 import { renderBagCounterTag } from "../components/bagButton.js";
+import html from "../components/htmlElement.js";
 
 let productImageElement,
   productPriceElement,
@@ -30,17 +31,29 @@ export default async function productDetailsPage() {
   const query = new URLSearchParams(window.location.search);
   const itemNumber = query.get("item_number");
 
-  fetchProduct(itemNumber).then((product) => {
-    currentProduct = product;
-    renderProduct();
-    addEvents();
-  });
+  fetchProduct(itemNumber)
+    .then((product) => {
+      currentProduct = product;
+      renderProduct();
+      addEvents();
+      createSizeOptions();
+      removeLoader();
+    })
+    .catch((error) => {
+      const loader = document.querySelector(".loader");
+      loader.textContent = "Error loading product";
+    });
 
   renderMoreProductsGrid();
 }
 
+function removeLoader() {
+  const loader = document.querySelector(".loader");
+  loader.classList.add("hidden");
+}
+
 /*  
-  Sets values to the declared properties of this module
+  Sets the initial values to the declared properties of this module
 */
 function initializeProperties() {
   productImageElement = document.querySelector("#product-image");
@@ -59,10 +72,42 @@ function initializeProperties() {
   itemAmountAddButtonElement = document.querySelector("#itemAmountAdd");
 }
 
+function createSizeOptions() {
+  const sizeOptionsElement = document.querySelector(".size-options-group");
+  sizeOptionsElement.innerHTML = "";
+  const sizes = currentProduct.sizes;
+  sizes.forEach((size) => {
+    const optionDivElement = new html("div");
+    const optionInputElement = new html("input");
+    const optionLabelElement = new html("label");
+    optionDivElement.setClasses("size-option");
+    optionInputElement.setClasses("radio").setAttributes({
+      id: "size" + size.toUpperCase(),
+      type: "radio",
+      name: "size",
+      value: size,
+    });
+    optionLabelElement
+      .setClasses("size-label")
+      .setAttributes({ for: "size" + size.toUpperCase() })
+      .setText(size);
+
+    optionInputElement.checked = false;
+    optionInputElement.setEventListener("change", (event) => {
+      selectedSize = event.target.value;
+    });
+    optionDivElement.appendChildren(optionInputElement, optionLabelElement);
+
+    sizeOptionsElement.append(optionDivElement.element);
+  });
+}
+
 /*  
   Renders the view of the currently selected product
 */
 async function renderProduct() {
+  const container = document.querySelector(".options-container");
+  container.classList.remove("hidden");
   document.title = `${currentProduct.title} - Rainy Days`;
   document
     .querySelector('meta[name="description"]')
@@ -102,7 +147,7 @@ async function renderMoreProductsGrid() {
   Adding event handlers used on this page
 */
 function addEvents() {
-  addSizeInputEvent();
+  //addSizeInputEvent();
 
   addAmountInputEvents();
 
