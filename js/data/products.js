@@ -1,5 +1,4 @@
-// const url = "/data/products.json";
-import { consumer_key, consumer_secret } from "./apiSettings.js";
+import { consumer_key, consumer_secret } from "../apiSettings.js";
 import { filter } from "./productFilter.js";
 
 const defaultFilterSettings = {
