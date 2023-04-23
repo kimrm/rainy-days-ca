@@ -41,7 +41,7 @@ export default async function productDetailsPage() {
     })
     .catch((error) => {
       const loader = document.querySelector(".loader");
-      loader.textContent = "Error loading product";
+      loader.textContent = "Error loading product. Please try again later.";
     });
 
   renderMoreProductsGrid();
