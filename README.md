@@ -1,17 +1,42 @@
-# Rainy Days Course Assignment
+# Rainy Days - Course Assignment
 
-This is a repo for an HTML and CSS course assignment. It's a fictional rain jacket shop named Rainy Days.
+![image](https://github.com/kimrm/rainy-days-ca/blob/main/images/RainyDays_cropped.png?raw=true)
 
-### Comments
+## Description
 
-- Some design changes has been done since the prototype was made.
-- The remove from basket button doesn't do anything yet because it will need javascript.
-- The shopping bag always show 3 items for demonstration purposes.
+This project is a webshop for a fictional rainwear manufacturer.
 
-### Execute program
-
+A live demo of the project: 
 [https://splendid-custard-e9a90d.netlify.app](https://splendid-custard-e9a90d.netlify.app)
 
-### Figma Prototype
+## Built With
 
-[https://www.figma.com/file/3c0eAlUutWaUNcB2Dt0Rzp/Rainy-Days?node-id=0%3A1](https://www.figma.com/file/3c0eAlUutWaUNcB2Dt0Rzp/Rainy-Days?node-id=0%3A1)
+- HTML
+- CSS
+- Javascript
+
+## Getting Started
+
+### Installing
+
+1. Clone the repo:
+
+```bash
+git clone git@github.com:kimrm/rainy-days-ca.git
+```
+
+### Running
+
+Run the app with Live Server extension or directly from a web server.
+
+## Contributing
+
+As this is a student project contributions are not requested.
+
+## Contact
+
+[My LinkedIn page](https://www.linkedin.com/in/kim-rune-moller/)
+
+## License
+
+No license required. Project is free to clone for example og educational purposes.
